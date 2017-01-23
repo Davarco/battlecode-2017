@@ -13,4 +13,9 @@ public class Channels {
     static final int CHANNEL_SCOUT_COUNT = 7;
     static final int CHANNEL_LUMBERJACK_SUM = 8;
     static final int CHANNEL_LUMBERJACK_COUNT = 9;
+    static final int CHANNEL_TREE_SUM = 10;
+    static final int CHANNEL_TREE_COUNT = 11;
+
+    static final int PRIORITY_X = 998;
+    static final int PRIORITY_Y = 999;
 }

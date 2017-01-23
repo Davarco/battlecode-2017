@@ -1,9 +1,44 @@
 package artemis;
 
 import battlecode.common.*;
+import static artemis.Channels.*;
 import static artemis.RobotPlayer.*;
 
 public class Nav {
+
+    static void moveToEnemy() {
+
+        try {
+
+            if (rc.readBroadcastFloat(PRIORITY_X) != 0 && rc.readBroadcastFloat(PRIORITY_Y) != 0) {
+                moveTowardsLocation(new MapLocation(PRIORITY_X, PRIORITY_Y));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void moveTowardsLocation(MapLocation loc) {
+
+        try {
+
+            // Add 90 deg if can't move in that dir
+            Direction dir = rc.getLocation().directionTo(loc);
+            if (rc.canMove(dir)) {
+                rc.move(dir);
+            } else {
+                if (rc.canMove(dir.rotateLeftDegrees(90))) {
+                    rc.move(dir.rotateLeftDegrees(90));
+                } else if (rc.canMove(dir.rotateRightDegrees(90))) {
+                    rc.move(dir.rotateRightDegrees(90));
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     static boolean avoidMapBoundaries() {
 
@@ -15,7 +50,7 @@ public class Nav {
             while (radians <= Math.PI*2) {
                 MapLocation loc = rc.getLocation().add(new Direction(radians), GARDENER_SPACE_RADIUS);
                 if (!rc.onTheMap(loc)) {
-                    tryMove(rc.getLocation().directionTo(loc).opposite(), 5, 8);
+                    tryMove(rc.getLocation().directionTo(loc).opposite(), 5, 36);
                     return true;
                 }
                 radians += (float)(Math.PI/3);

@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Gradle: org.battlecode:battlecode:2017.1.4.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/901ed5205dedc0602ef553cf24c05c339c1770e9/battlecode-2017.1.4.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/812957aae9be063a32160f2d4d99929445f0b433/battlecode-2017.1.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

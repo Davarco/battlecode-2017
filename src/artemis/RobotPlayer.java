@@ -21,12 +21,20 @@ public strictfp class RobotPlayer {
                 Gardener.loop();
                 break;
             case SOLDIER:
+                Soldier.init();
+                Soldier.loop();
                 break;
             case TANK:
+                Tank.init();
+                Tank.loop();
                 break;
             case SCOUT:
+                Scout.init();
+                Scout.loop();
                 break;
             case LUMBERJACK:
+                Lumberjack.init();
+                Lumberjack.loop();
                 break;
         }
     }

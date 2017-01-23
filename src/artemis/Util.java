@@ -1,10 +1,22 @@
 package artemis;
 
 import battlecode.common.*;
+import static artemis.Channels.*;
 import static artemis.RobotPlayer.*;
 import static artemis.Nav.*;
 
 public class Util {
+
+    static int getTotalFightingRobotCount() {
+        try {
+            return rc.readBroadcast(CHANNEL_SOLDIER_COUNT) + rc.readBroadcast(CHANNEL_SCOUT_COUNT) +
+                    rc.readBroadcast(CHANNEL_TANK_COUNT) + rc.readBroadcast(CHANNEL_LUMBERJACK_COUNT);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return 0;
+    }
 
     static void dodgeIncomingBullets(BulletInfo[] incomingBullets) {
 

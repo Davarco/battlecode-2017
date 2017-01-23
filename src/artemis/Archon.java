@@ -9,6 +9,9 @@ import static artemis.Util.*;
 public class Archon {
 
     static boolean isGardenerBuilt;
+    static int numOfGardeners;
+    static int numOfTrees;
+    static int maxGardeners;
 
     static void run() {
 
@@ -34,7 +37,8 @@ public class Archon {
             }
 
             // Build gardener
-            if (!isGardenerBuilt) {
+            numOfTrees = rc.readBroadcast(CHANNEL_TREE_COUNT);
+            if (!isGardenerBuilt || numOfGardeners < maxGardeners) {
                 tryBuildGardener();
             }
 
@@ -68,6 +72,9 @@ public class Archon {
     static void init() {
 
         isGardenerBuilt = false;
+        numOfGardeners = 0;
+        numOfTrees = 0;
+        maxGardeners = 1;
     }
 
     static void tryBuildGardener() {
@@ -83,13 +90,14 @@ public class Archon {
                 if (rc.canHireGardener(buildDir)) {
                     rc.hireGardener(buildDir);
                     isGardenerBuilt = true;
+                    numOfGardeners += 1;
                     return;
                 } else {
                     radians += radianInterval;
                 }
             }
 
-            System.out.println("Couldn't build gardener.");
+            //System.out.println("Couldn't build gardener.");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -111,6 +119,8 @@ public class Archon {
             rc.broadcast(CHANNEL_SCOUT_SUM, 0);
             rc.broadcast(CHANNEL_LUMBERJACK_COUNT, rc.readBroadcast(CHANNEL_LUMBERJACK_SUM));
             rc.broadcast(CHANNEL_LUMBERJACK_SUM, 0);
+            rc.broadcast(CHANNEL_TREE_COUNT, rc.readBroadcast(CHANNEL_TREE_SUM));
+            rc.broadcast(CHANNEL_TREE_SUM, 0);
 
         } catch (Exception e) {
             e.printStackTrace();
