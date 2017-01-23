@@ -64,11 +64,11 @@ public class Gardener {
 
             // Build units
             if (isTreePlanted) {
-                if (numScouts * 6 <= totalRobots) {
+                if (numScouts * 4 <= totalRobots) {
                     if (rc.hasRobotBuildRequirements(RobotType.SCOUT)) {
                         tryToBuildUnit(RobotType.SCOUT);
                     }
-                } else if (numLumberjacks * 2 <= totalRobots) {
+                } else if (numLumberjacks * 4 <= totalRobots) {
                     if (rc.hasRobotBuildRequirements(RobotType.LUMBERJACK)) {
                         tryToBuildUnit(RobotType.LUMBERJACK);
                     }

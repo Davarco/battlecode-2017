@@ -8,6 +8,10 @@ import static artemis.Util.*;
 
 public class Lumberjack {
 
+    static boolean isLocLeader;
+    static float prevPriorityX;
+    static float prevPriorityY;
+
     static void run() {
 
         try {
@@ -19,10 +23,30 @@ public class Lumberjack {
 
             // Lumberjack move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
+            RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
             if (bulletInfo.length > 0) {
                 dodgeIncomingBullets(bulletInfo);
-            } else {
+            } else if (priorityLocExists()) {
                 moveToPriorityLoc();
+            } else if (enemyInfo.length > 0) {
+                moveTowardsEnemy(enemyInfo);
+                setPriorityLoc(enemyInfo);
+                isLocLeader = true;
+            } else {
+                tryMove(randomDirection());
+            }
+
+            // Update the locations to go to, or reset to 0 if they don't exist
+            if (isLocLeader) {
+                if (!updatePriorityLocStatus(enemyInfo)) {
+                    isLocLeader = false;
+                }
+            } else {
+
+                // Should have been reset from previous round
+                if (prevPriorityX == rc.readBroadcastFloat(PRIORITY_X) && prevPriorityY == rc.readBroadcastFloat(PRIORITY_Y)) {
+
+                }
             }
 
         } catch (Exception e) {
@@ -54,6 +78,9 @@ public class Lumberjack {
 
     static void init() {
 
+        isLocLeader = false;
+        prevPriorityX = 0;
+        prevPriorityY = 0;
     }
 
     static void updateRobotNum() {

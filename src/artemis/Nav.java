@@ -6,13 +6,82 @@ import static artemis.RobotPlayer.*;
 
 public class Nav {
 
+    static boolean updatePriorityLocStatus(RobotInfo[] robotInfo) {
+
+        try {
+
+            if (robotInfo.length > 0) {
+
+                // Send new data
+                rc.broadcastFloat(PRIORITY_X, robotInfo[0].getLocation().x);
+                rc.broadcastFloat(PRIORITY_Y, robotInfo[0].getLocation().y);
+                return true;
+
+            } else {
+
+                // Reset if there are no longer enemies
+                rc.broadcastFloat(PRIORITY_X, 0);
+                rc.broadcastFloat(PRIORITY_Y, 0);
+                return false;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    static void setPriorityLoc(RobotInfo[] robotInfo) {
+
+        try {
+
+            // Broadcast robot info
+            rc.broadcastFloat(PRIORITY_X, robotInfo[0].getLocation().x);
+            rc.broadcastFloat(PRIORITY_Y, robotInfo[0].getLocation().y);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     static void moveToPriorityLoc() {
 
         try {
 
+            // Move to location broadcasted
+            float x = rc.readBroadcastFloat(PRIORITY_X);
+            float y = rc.readBroadcastFloat(PRIORITY_Y);
+            moveTowardsLocation(new MapLocation(x, y));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static boolean priorityLocExists() {
+
+        try {
+
+            // See if they are 0 or not
             if (rc.readBroadcastFloat(PRIORITY_X) != 0 && rc.readBroadcastFloat(PRIORITY_Y) != 0) {
-                moveTowardsLocation(new MapLocation(PRIORITY_X, PRIORITY_Y));
+                return true;
             }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
+    static void moveTowardsEnemy(RobotInfo[] robotInfo) {
+
+        try {
+
+            // Move towards first enemy
+            // TODO: This is pretty bad, needs to be fixed before robots get clusterfucked
+            moveTowardsLocation(robotInfo[0].getLocation());
 
         } catch (Exception e) {
             e.printStackTrace();

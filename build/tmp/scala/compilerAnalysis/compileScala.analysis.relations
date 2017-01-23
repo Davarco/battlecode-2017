@@ -8,21 +8,25 @@ binary dependencies:
    src/artemis/Lumberjack.java -> build/classes/artemis/Channels.class
    src/artemis/Lumberjack.java -> build/classes/artemis/Nav.class
    src/artemis/Lumberjack.java -> build/classes/artemis/RobotPlayer.class
+   src/artemis/Lumberjack.java -> build/classes/artemis/Util.class
    src/artemis/Lumberjack.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
    src/artemis/Scout.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
    src/artemis/Scout.java -> build/classes/artemis/Channels.class
    src/artemis/Scout.java -> build/classes/artemis/Nav.class
    src/artemis/Scout.java -> build/classes/artemis/RobotPlayer.class
+   src/artemis/Scout.java -> build/classes/artemis/Util.class
    src/artemis/Scout.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
    src/artemis/Soldier.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
    src/artemis/Soldier.java -> build/classes/artemis/Channels.class
    src/artemis/Soldier.java -> build/classes/artemis/Nav.class
    src/artemis/Soldier.java -> build/classes/artemis/RobotPlayer.class
+   src/artemis/Soldier.java -> build/classes/artemis/Util.class
    src/artemis/Soldier.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
    src/artemis/Tank.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
    src/artemis/Tank.java -> build/classes/artemis/Channels.class
    src/artemis/Tank.java -> build/classes/artemis/Nav.class
    src/artemis/Tank.java -> build/classes/artemis/RobotPlayer.class
+   src/artemis/Tank.java -> build/classes/artemis/Util.class
    src/artemis/Tank.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
 source dependencies:
    src/artemis/Lumberjack.java -> src/artemis/Lumberjack.java

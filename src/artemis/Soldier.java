@@ -8,6 +8,7 @@ import static artemis.Util.*;
 
 public class Soldier {
 
+    static boolean isLocLeader;
 
     static void run() {
 
@@ -20,10 +21,23 @@ public class Soldier {
 
             // Soldier move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
+            RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
             if (bulletInfo.length > 0) {
                 dodgeIncomingBullets(bulletInfo);
-            } else {
+            } else if (priorityLocExists()) {
                 moveToPriorityLoc();
+            } else if (enemyInfo.length > 0) {
+                moveTowardsEnemy(enemyInfo);
+                setPriorityLoc(enemyInfo);
+            } else {
+                tryMove(randomDirection());
+            }
+
+            // Update the locations to go to, or reset to 0 if they don't exist
+            if (isLocLeader) {
+                if (!updatePriorityLocStatus(enemyInfo)) {
+                    isLocLeader = false;
+                }
             }
 
         } catch (Exception e) {
@@ -55,6 +69,7 @@ public class Soldier {
 
     static void init() {
 
+        isLocLeader = false;
     }
 
     static void updateRobotNum() {
