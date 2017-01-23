@@ -5,6 +5,7 @@ import static artemis.Channels.*;
 import static artemis.RobotPlayer.*;
 import static artemis.Nav.*;
 import static artemis.Util.*;
+import static artemis.Combat.*;
 
 public class Tank {
 
@@ -39,6 +40,9 @@ public class Tank {
                     isLocLeader = false;
                 }
             }
+
+            // Attack enemies within range
+            defaultRangedAttack(enemyInfo);
 
         } catch (Exception e) {
             e.printStackTrace();

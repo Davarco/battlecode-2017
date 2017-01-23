@@ -43,11 +43,15 @@ public class Lumberjack {
                 }
             } else {
 
-                // Should have been reset from previous round
+                // Reset if same as previous round
                 if (prevPriorityX == rc.readBroadcastFloat(PRIORITY_X) && prevPriorityY == rc.readBroadcastFloat(PRIORITY_Y)) {
-
+                    rc.broadcast(PRIORITY_X, 0);
+                    rc.broadcast(PRIORITY_Y, 0);
                 }
             }
+
+            prevPriorityX = rc.readBroadcastFloat(PRIORITY_X);
+            prevPriorityY = rc.readBroadcastFloat(PRIORITY_Y);
 
         } catch (Exception e) {
             e.printStackTrace();
