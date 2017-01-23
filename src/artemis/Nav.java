@@ -6,7 +6,7 @@ import static artemis.RobotPlayer.*;
 
 public class Nav {
 
-    static void moveToEnemy() {
+    static void moveToPriorityLoc() {
 
         try {
 

@@ -18,7 +18,13 @@ public class Tank {
                 updateRobotNum();
             }
 
-            tryMove(randomDirection());
+            // Tank move
+            BulletInfo[] bulletInfo = rc.senseNearbyBullets();
+            if (bulletInfo.length > 0) {
+                dodgeIncomingBullets(bulletInfo);
+            } else {
+                moveToPriorityLoc();
+            }
 
         } catch (Exception e) {
             e.printStackTrace();

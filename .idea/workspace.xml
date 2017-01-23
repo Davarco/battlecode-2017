@@ -2,28 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f15232b3-87af-498e-a403-d16ef8a70bcf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/artemis/Archon.class" afterPath="$PROJECT_DIR$/build/classes/artemis/Archon.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/artemis/Channels.class" afterPath="$PROJECT_DIR$/build/classes/artemis/Channels.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/artemis/Gardener.class" afterPath="$PROJECT_DIR$/build/classes/artemis/Gardener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/artemis/Nav.class" afterPath="$PROJECT_DIR$/build/classes/artemis/Nav.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/artemis/RobotPlayer.class" afterPath="$PROJECT_DIR$/build/classes/artemis/RobotPlayer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/artemis/Util.class" afterPath="$PROJECT_DIR$/build/classes/artemis/Util.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matches/artemis-vs-artemis-on-shrine.bc17" afterPath="$PROJECT_DIR$/matches/artemis-vs-artemis-on-shrine.bc17" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/examplefuncsplayer.RobotPlayerTest.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/examplefuncsplayer.RobotPlayerTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/examplefuncsplayer.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/examplefuncsplayer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/TEST-examplefuncsplayer.RobotPlayerTest.xml" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-examplefuncsplayer.RobotPlayerTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis.relations" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis.relations" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileTestScala.analysis" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileTestScala.analysis" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileTestScala.analysis.relations" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileTestScala.analysis.relations" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/artemis/Archon.java" afterPath="$PROJECT_DIR$/src/artemis/Archon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/artemis/Channels.java" afterPath="$PROJECT_DIR$/src/artemis/Channels.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/artemis/Gardener.java" afterPath="$PROJECT_DIR$/src/artemis/Gardener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/artemis/Lumberjack.java" afterPath="$PROJECT_DIR$/src/artemis/Lumberjack.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/artemis/Nav.java" afterPath="$PROJECT_DIR$/src/artemis/Nav.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/artemis/RobotPlayer.java" afterPath="$PROJECT_DIR$/src/artemis/RobotPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/artemis/Util.java" afterPath="$PROJECT_DIR$/src/artemis/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/artemis/Soldier.java" afterPath="$PROJECT_DIR$/src/artemis/Soldier.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/artemis/Tank.java" afterPath="$PROJECT_DIR$/src/artemis/Tank.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -93,7 +75,7 @@
         <entry file="file://$PROJECT_DIR$/src/artemis/Lumberjack.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
-              <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+              <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="25" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -102,8 +84,8 @@
       <file leaf-file-name="Nav.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/artemis/Nav.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="319">
+              <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,8 +116,8 @@
       <file leaf-file-name="Soldier.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/artemis/Soldier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+            <state relative-caret-position="288">
+              <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -144,8 +126,8 @@
       <file leaf-file-name="Tank.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/artemis/Tank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+            <state relative-caret-position="288">
+              <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -548,13 +530,13 @@
         <option value="$PROJECT_DIR$/src/artemis/Archon.java" />
         <option value="$PROJECT_DIR$/src/artemis/Util.java" />
         <option value="$PROJECT_DIR$/src/artemis/Scout.java" />
-        <option value="$PROJECT_DIR$/src/artemis/Tank.java" />
         <option value="$PROJECT_DIR$/src/artemis/RobotPlayer.java" />
         <option value="$PROJECT_DIR$/src/artemis/Gardener.java" />
         <option value="$PROJECT_DIR$/src/artemis/Channels.java" />
+        <option value="$PROJECT_DIR$/src/artemis/Nav.java" />
         <option value="$PROJECT_DIR$/src/artemis/Lumberjack.java" />
         <option value="$PROJECT_DIR$/src/artemis/Soldier.java" />
-        <option value="$PROJECT_DIR$/src/artemis/Nav.java" />
+        <option value="$PROJECT_DIR$/src/artemis/Tank.java" />
       </list>
     </option>
   </component>
@@ -1119,14 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/artemis/RobotPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/artemis/Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1147,10 +1121,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/artemis/Scout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/artemis/RobotPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="22" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/artemis/Nav.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="14" column="13" lean-forward="true" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="319">
+          <caret line="21" column="51" lean-forward="false" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1160,31 +1150,23 @@
     <entry file="file://$PROJECT_DIR$/src/artemis/Lumberjack.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/artemis/Scout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="26" lean-forward="false" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
+          <caret line="19" column="12" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="25" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/artemis/Soldier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+        <state relative-caret-position="288">
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/artemis/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="29" column="22" lean-forward="true" selection-start-line="29" selection-start-column="22" selection-end-line="29" selection-end-column="22" />
+        <state relative-caret-position="288">
+          <caret line="20" column="24" lean-forward="true" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
           <folding />
         </state>
       </provider>

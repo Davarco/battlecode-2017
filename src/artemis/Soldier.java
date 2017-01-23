@@ -22,6 +22,8 @@ public class Soldier {
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             if (bulletInfo.length > 0) {
                 dodgeIncomingBullets(bulletInfo);
+            } else {
+                moveToPriorityLoc();
             }
 
         } catch (Exception e) {

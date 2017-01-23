@@ -17,7 +17,13 @@ public class Lumberjack {
                 updateRobotNum();
             }
 
-            // Soldier move
+            // Lumberjack move
+            BulletInfo[] bulletInfo = rc.senseNearbyBullets();
+            if (bulletInfo.length > 0) {
+                dodgeIncomingBullets(bulletInfo);
+            } else {
+                moveToPriorityLoc();
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
