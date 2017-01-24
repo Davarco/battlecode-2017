@@ -1,8 +1,6 @@
 package lightsaber;
 
 import battlecode.common.*;
-
-import java.awt.*;
 import java.util.HashMap;
 
 import static lightsaber.Channels.CHANNEL_SOLDIER_SUM;
