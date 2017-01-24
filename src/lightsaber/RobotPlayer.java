@@ -19,6 +19,9 @@ public strictfp class RobotPlayer {
     // For smart pathing
     static Map<MapLocation, Float> obstacleList;
 
+    // For scouting
+    static MapLocation[] initialArchonLocations;
+
     @SuppressWarnings("unused")
     public static void run(RobotController rc) throws GameActionException {
 

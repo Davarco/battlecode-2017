@@ -3,6 +3,7 @@ package lightsaber;
 import battlecode.common.BulletInfo;
 import battlecode.common.Clock;
 import battlecode.common.RobotInfo;
+import battlecode.common.TreeInfo;
 
 import java.util.HashMap;
 
@@ -17,6 +18,14 @@ public class Lumberjack {
     static void run() {
 
         try {
+
+            // Add obstacles
+            /*
+            TreeInfo[] treeInfo = rc.senseNearbyTrees();
+            RobotInfo[] robotInfo = rc.senseNearbyRobots();
+            addObstacles(treeInfo);
+            addObstacles(robotInfo);
+            */
 
             // Lumberjack move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();

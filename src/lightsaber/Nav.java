@@ -2,12 +2,32 @@ package lightsaber;
 
 import battlecode.common.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static lightsaber.Channels.PRIORITY_X;
 import static lightsaber.Channels.PRIORITY_Y;
+import static lightsaber.RobotPlayer.obstacleList;
 import static lightsaber.RobotPlayer.rc;
 import static lightsaber.Util.willCollideWithMe;
 
 public class Nav {
+
+    static void moveSmartPath(MapLocation goal) {
+
+        try {
+
+            class Node {
+                MapLocation loc;
+                Node prevNode;
+            }
+
+            List<MapLocation> closedSet = new ArrayList<>();
+            List<MapLocation> openSet = new ArrayList<>();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     static void moveToPriorityLoc() {
 
@@ -47,11 +67,15 @@ public class Nav {
             if (rc.canMove(dir)) {
                 rc.move(dir);
             } else {
-                if (rc.canMove(dir.rotateLeftDegrees(90))) {
-                    rc.move(dir.rotateLeftDegrees(90));
-                } else if (rc.canMove(dir.rotateRightDegrees(90))) {
-                    rc.move(dir.rotateRightDegrees(90));
+
+                for (float f = 0; f < 360; f+=5) {
+                    if (rc.canMove(dir.rotateLeftDegrees(f))) {
+                        rc.move(dir.rotateLeftDegrees(f));
+                        return;
+                    }
                 }
+
+                System.out.println("Couldn't move out!");
             }
 
         } catch (Exception e) {
@@ -172,5 +196,21 @@ public class Nav {
 
     static boolean tryMove(Direction dir) throws GameActionException {
         return tryMove(dir,20,3);
+    }
+
+    static void addObstacles(RobotInfo[] robotInfo) {
+
+        // Add robots as obstacles
+        for (RobotInfo info: robotInfo) {
+            obstacleList.put(info.getLocation(), info.getRadius());
+        }
+    }
+
+    static void addObstacles(TreeInfo[] treeInfo) {
+
+        // Add trees as obstacles
+        for (TreeInfo info: treeInfo) {
+            obstacleList.put(info.getLocation(), info.getRadius());
+        }
     }
 }

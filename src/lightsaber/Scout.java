@@ -1,9 +1,8 @@
 package lightsaber;
 
-import battlecode.common.BulletInfo;
-import battlecode.common.Clock;
-import battlecode.common.RobotInfo;
+import battlecode.common.*;
 
+import java.awt.*;
 import java.util.HashMap;
 
 import static lightsaber.Channels.CHANNEL_SOLDIER_SUM;
@@ -18,6 +17,14 @@ public class Scout {
 
         try {
 
+            // Add obstacles
+            /*
+            TreeInfo[] treeInfo = rc.senseNearbyTrees();
+            RobotInfo[] robotInfo = rc.senseNearbyRobots();
+            addObstacles(treeInfo);
+            addObstacles(robotInfo);
+            */
+
             // Scout move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
@@ -29,7 +36,7 @@ public class Scout {
                 moveTowardsEnemy(enemyInfo);
                 setPriorityLoc(enemyInfo);
             } else {
-                tryMove(randomDirection());
+                moveTowardsLocation(initialArchonLocations[0]);
             }
 
             // Reset priority loc details
@@ -75,6 +82,8 @@ public class Scout {
         prevPriorityX = 0;
         prevPriorityY = 0;
         obstacleList = new HashMap<>();
+
+        initialArchonLocations = rc.getInitialArchonLocations(rc.getTeam().opponent());
     }
 
     static void updateRobotNum() {

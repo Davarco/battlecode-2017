@@ -1,9 +1,6 @@
 package lightsaber;
 
-import battlecode.common.BulletInfo;
-import battlecode.common.Clock;
-import battlecode.common.Direction;
-import battlecode.common.RobotInfo;
+import battlecode.common.*;
 
 import static lightsaber.Channels.CHANNEL_TREE_COUNT;
 import static lightsaber.Nav.*;

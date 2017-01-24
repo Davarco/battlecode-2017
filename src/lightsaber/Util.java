@@ -5,8 +5,8 @@ import battlecode.common.Direction;
 import battlecode.common.MapLocation;
 import battlecode.common.RobotInfo;
 
-import static artemis.Channels.*;
-import static artemis.RobotPlayer.*;
+import static lightsaber.Channels.*;
+import static lightsaber.RobotPlayer.*;
 
 public class Util {
 
