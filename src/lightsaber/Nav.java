@@ -1,13 +1,11 @@
-package artemis;
+package lightsaber;
 
 import battlecode.common.*;
 
-import java.awt.geom.FlatteningPathIterator;
-import java.util.Map;
-
-import static artemis.Channels.*;
-import static artemis.RobotPlayer.*;
-import static artemis.Util.*;
+import static lightsaber.Channels.PRIORITY_X;
+import static lightsaber.Channels.PRIORITY_Y;
+import static lightsaber.RobotPlayer.rc;
+import static lightsaber.Util.willCollideWithMe;
 
 public class Nav {
 

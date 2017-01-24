@@ -1,7 +1,10 @@
-package artemis;
+package lightsaber;
 
-import java.util.*;
-import battlecode.common.*;
+import battlecode.common.GameActionException;
+import battlecode.common.MapLocation;
+import battlecode.common.RobotController;
+
+import java.util.Map;
 
 
 public strictfp class RobotPlayer {

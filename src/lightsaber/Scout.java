@@ -1,35 +1,33 @@
-package artemis;
+package lightsaber;
 
-import battlecode.common.*;
+import battlecode.common.BulletInfo;
+import battlecode.common.Clock;
+import battlecode.common.RobotInfo;
 
 import java.util.HashMap;
 
-import static artemis.Channels.*;
-import static artemis.RobotPlayer.*;
-import static artemis.Nav.*;
-import static artemis.Util.*;
-import static artemis.Combat.*;
+import static lightsaber.Channels.CHANNEL_SOLDIER_SUM;
+import static lightsaber.Combat.defaultRangedAttack;
+import static lightsaber.Nav.*;
+import static lightsaber.RobotPlayer.*;
+import static lightsaber.Util.*;
 
-public class Lumberjack {
+public class Scout {
 
     static void run() {
 
         try {
 
-            // Lumberjack move
+            // Scout move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
-            RobotInfo[] nearbyTeamInfo = rc.senseNearbyRobots(1.5f, rc.getTeam());
             if (bulletCollisionImminent(bulletInfo)) {
                 dodgeIncomingBullets(bulletInfo);
-            } else if (nearbyTeamInfo.length > 0) {
-                evadeRobotGroup(nearbyTeamInfo);
             } else if (priorityLocExists()) {
                 moveToPriorityLoc();
             } else if (enemyInfo.length > 0) {
                 moveTowardsEnemy(enemyInfo);
                 setPriorityLoc(enemyInfo);
-                isLocLeader = true;
             } else {
                 tryMove(randomDirection());
             }
@@ -37,8 +35,10 @@ public class Lumberjack {
             // Reset priority loc details
             resetPriorityStatus(enemyInfo);
 
-            // Default melee attack
-            defaultMeleeAttack();
+            // Default ranged attack
+            if (enemyInfo.length > 0) {
+                defaultRangedAttack(enemyInfo);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -79,7 +79,7 @@ public class Lumberjack {
 
     static void updateRobotNum() {
         try {
-            rc.broadcast(CHANNEL_LUMBERJACK_SUM, rc.readBroadcast(CHANNEL_LUMBERJACK_SUM)+1);
+            rc.broadcast(CHANNEL_SOLDIER_SUM, rc.readBroadcast(CHANNEL_SOLDIER_SUM)+1);
         } catch (Exception e) {
             e.printStackTrace();
         }

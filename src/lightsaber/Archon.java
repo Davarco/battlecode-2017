@@ -1,10 +1,14 @@
-package artemis;
+package lightsaber;
 
-import battlecode.common.*;
-import static artemis.RobotPlayer.*;
-import static artemis.Channels.*;
-import static artemis.Nav.*;
-import static artemis.Util.*;
+import battlecode.common.BulletInfo;
+import battlecode.common.Clock;
+import battlecode.common.Direction;
+import battlecode.common.RobotInfo;
+
+import static lightsaber.Channels.CHANNEL_TREE_COUNT;
+import static lightsaber.Nav.*;
+import static lightsaber.RobotPlayer.rc;
+import static lightsaber.Util.bulletCollisionImminent;
 
 public class Archon {
 

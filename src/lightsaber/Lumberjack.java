@@ -1,14 +1,16 @@
-package artemis;
+package lightsaber;
 
-import battlecode.common.*;
+import battlecode.common.BulletInfo;
+import battlecode.common.Clock;
+import battlecode.common.RobotInfo;
 
 import java.util.HashMap;
 
-import static artemis.Channels.*;
-import static artemis.RobotPlayer.*;
-import static artemis.Nav.*;
-import static artemis.Util.*;
-import static artemis.Combat.*;
+import static lightsaber.Channels.CHANNEL_LUMBERJACK_SUM;
+import static lightsaber.Combat.defaultMeleeAttack;
+import static lightsaber.Nav.*;
+import static lightsaber.RobotPlayer.*;
+import static lightsaber.Util.*;
 
 public class Lumberjack {
 

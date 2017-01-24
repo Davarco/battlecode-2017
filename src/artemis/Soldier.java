@@ -1,6 +1,7 @@
 package artemis;
 
 import battlecode.common.*;
+import java.util.*;
 import static artemis.Channels.*;
 import static artemis.RobotPlayer.*;
 import static artemis.Nav.*;
@@ -12,11 +13,6 @@ public class Soldier {
     static void run() {
 
         try {
-
-            // Execute every six rounds
-            if (rc.getRoundNum() % 6 == 0) {
-                updateRobotNum();
-            }
 
             // Soldier move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
@@ -61,6 +57,7 @@ public class Soldier {
             int endTurn = rc.getRoundNum();
             if (startTurn != endTurn) {
                 System.out.println("Over maximum bytecodes! Start @" + startTurn + " End @" + endTurn);
+                rc.setIndicatorDot(rc.getLocation(), 0, 0, 0);
             }
 
             Clock.yield();
@@ -73,6 +70,7 @@ public class Soldier {
         isLocLeader = false;
         prevPriorityX = 0;
         prevPriorityY = 0;
+        obstacleList = new HashMap<>();
     }
 
     static void updateRobotNum() {

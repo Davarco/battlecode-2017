@@ -1,11 +1,12 @@
-package artemis;
+package lightsaber;
 
 import battlecode.common.*;
-import java.util.*;
-import static artemis.Channels.*;
-import static artemis.RobotPlayer.*;
-import static artemis.Nav.*;
-import static artemis.Util.*;
+
+import static lightsaber.Channels.CHANNEL_GARDENER_SUM;
+import static lightsaber.Channels.CHANNEL_TREE_SUM;
+import static lightsaber.Nav.*;
+import static lightsaber.RobotPlayer.rc;
+import static lightsaber.Util.bulletCollisionImminent;
 
 public class Gardener {
 
