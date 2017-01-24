@@ -26,4 +26,20 @@ public class Combat {
             e.printStackTrace();
         }
     }
+
+    static void defaultMeleeAttack() {
+
+        try {
+
+            // Strike if there are enemies within radius
+            RobotInfo[] enemyInfoWithinRadius = rc.senseNearbyRobots(GameConstants.LUMBERJACK_STRIKE_RADIUS, rc.getTeam().opponent());
+            RobotInfo[] friendlyInfoWithinRadius = rc.senseNearbyRobots(GameConstants.LUMBERJACK_STRIKE_RADIUS, rc.getTeam());
+            if (rc.canStrike() && enemyInfoWithinRadius.length > friendlyInfoWithinRadius.length) {
+                rc.strike();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

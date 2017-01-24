@@ -5,12 +5,9 @@ import static artemis.Channels.*;
 import static artemis.RobotPlayer.*;
 import static artemis.Nav.*;
 import static artemis.Util.*;
+import static artemis.Combat.*;
 
 public class Lumberjack {
-
-    static boolean isLocLeader;
-    static float prevPriorityX;
-    static float prevPriorityY;
 
     static void run() {
 
@@ -24,8 +21,11 @@ public class Lumberjack {
             // Lumberjack move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
-            if (bulletInfo.length > 0) {
+            RobotInfo[] nearbyTeamInfo = rc.senseNearbyRobots(1.5f, rc.getTeam());
+            if (bulletCollisionImminent(bulletInfo)) {
                 dodgeIncomingBullets(bulletInfo);
+            } else if (nearbyTeamInfo.length > 0) {
+                evadeRobotGroup(nearbyTeamInfo);
             } else if (priorityLocExists()) {
                 moveToPriorityLoc();
             } else if (enemyInfo.length > 0) {
@@ -36,22 +36,11 @@ public class Lumberjack {
                 tryMove(randomDirection());
             }
 
-            // Update the locations to go to, or reset to 0 if they don't exist
-            if (isLocLeader) {
-                if (!updatePriorityLocStatus(enemyInfo)) {
-                    isLocLeader = false;
-                }
-            } else {
+            // Reset priority loc details
+            resetPriorityStatus(enemyInfo);
 
-                // Reset if same as previous round
-                if (prevPriorityX == rc.readBroadcastFloat(PRIORITY_X) && prevPriorityY == rc.readBroadcastFloat(PRIORITY_Y)) {
-                    rc.broadcast(PRIORITY_X, 0);
-                    rc.broadcast(PRIORITY_Y, 0);
-                }
-            }
-
-            prevPriorityX = rc.readBroadcastFloat(PRIORITY_X);
-            prevPriorityY = rc.readBroadcastFloat(PRIORITY_Y);
+            // Default melee attack
+            defaultMeleeAttack();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -82,6 +71,7 @@ public class Lumberjack {
 
     static void init() {
 
+        // Initialize variables
         isLocLeader = false;
         prevPriorityX = 0;
         prevPriorityY = 0;

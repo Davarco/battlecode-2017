@@ -5,10 +5,9 @@ import static artemis.Channels.*;
 import static artemis.RobotPlayer.*;
 import static artemis.Nav.*;
 import static artemis.Util.*;
+import static artemis.Combat.*;
 
 public class Scout {
-
-    static boolean isLocLeader;
 
     static void run() {
 
@@ -22,23 +21,23 @@ public class Scout {
             // Scout move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
-            if (bulletInfo.length > 0) {
+            if (bulletCollisionImminent(bulletInfo)) {
                 dodgeIncomingBullets(bulletInfo);
             } else if (priorityLocExists()) {
                 moveToPriorityLoc();
             } else if (enemyInfo.length > 0) {
                 moveTowardsEnemy(enemyInfo);
                 setPriorityLoc(enemyInfo);
-                isLocLeader = true;
             } else {
                 tryMove(randomDirection());
             }
 
-            // Update the locations to go to, or reset to 0 if they don't exist
-            if (isLocLeader) {
-                if (!updatePriorityLocStatus(enemyInfo)) {
-                    isLocLeader = false;
-                }
+            // Reset priority loc details
+            resetPriorityStatus(enemyInfo);
+
+            // Default ranged attack
+            if (enemyInfo.length > 0) {
+                defaultRangedAttack(enemyInfo);
             }
 
         } catch (Exception e) {
@@ -70,7 +69,10 @@ public class Scout {
 
     static void init() {
 
+        // Initialize variables
         isLocLeader = false;
+        prevPriorityX = 0;
+        prevPriorityY = 0;
     }
 
     static void updateRobotNum() {

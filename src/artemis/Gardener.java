@@ -37,7 +37,7 @@ public class Gardener {
             if (!isTreePlanted) {
                 if (enemyInfo.length > 0) {
                     evadeRobotGroup(enemyInfo);
-                } else if (bulletInfo.length > 0) {
+                } else if (bulletCollisionImminent(bulletInfo)) {
                     dodgeIncomingBullets(bulletInfo);
                 } else if (teamInfo.length > 0) {
                     evadeRobotGroup(teamInfo);
@@ -46,7 +46,7 @@ public class Gardener {
                 }
 
                 maxNumTrees = findMaxNumTrees() - 1;
-                System.out.println("Number of max trees: " + maxNumTrees);
+                //System.out.println("Number of max trees: " + maxNumTrees);
             }
 
             // Build, water, and update trees
@@ -108,6 +108,7 @@ public class Gardener {
 
     static void init() {
 
+        // Initialize variables
         isTreePlanted = false;
         numOfTrees = 0;
         maxNumTrees = 5;

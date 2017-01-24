@@ -6,6 +6,10 @@ public strictfp class RobotPlayer {
 
     static RobotController rc;
 
+    static boolean isLocLeader;
+    static float prevPriorityX;
+    static float prevPriorityY;
+
     @SuppressWarnings("unused")
     public static void run(RobotController rc) throws GameActionException {
 

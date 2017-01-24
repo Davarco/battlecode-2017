@@ -28,7 +28,7 @@ public class Archon {
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             if (enemyInfo.length > 0) {
                 evadeRobotGroup(enemyInfo);
-            } else if (bulletInfo.length > 0) {
+            } else if (bulletCollisionImminent(bulletInfo)) {
                 dodgeIncomingBullets(bulletInfo);
             } else if (teamInfo.length > 0) {
                 evadeRobotGroup(teamInfo);
@@ -71,6 +71,7 @@ public class Archon {
 
     static void init() {
 
+        // Initialize variables
         isGardenerBuilt = false;
         numOfGardeners = 0;
         numOfTrees = 0;

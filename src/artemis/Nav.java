@@ -3,47 +3,9 @@ package artemis;
 import battlecode.common.*;
 import static artemis.Channels.*;
 import static artemis.RobotPlayer.*;
+import static artemis.Util.*;
 
 public class Nav {
-
-    static boolean updatePriorityLocStatus(RobotInfo[] robotInfo) {
-
-        try {
-
-            if (robotInfo.length > 0) {
-
-                // Send new data
-                rc.broadcastFloat(PRIORITY_X, robotInfo[0].getLocation().x);
-                rc.broadcastFloat(PRIORITY_Y, robotInfo[0].getLocation().y);
-                return true;
-
-            } else {
-
-                // Reset if there are no longer enemies
-                rc.broadcastFloat(PRIORITY_X, 0);
-                rc.broadcastFloat(PRIORITY_Y, 0);
-                return false;
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return false;
-    }
-
-    static void setPriorityLoc(RobotInfo[] robotInfo) {
-
-        try {
-
-            // Broadcast robot info
-            rc.broadcastFloat(PRIORITY_X, robotInfo[0].getLocation().x);
-            rc.broadcastFloat(PRIORITY_Y, robotInfo[0].getLocation().y);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     static void moveToPriorityLoc() {
 
@@ -53,26 +15,12 @@ public class Nav {
             float x = rc.readBroadcastFloat(PRIORITY_X);
             float y = rc.readBroadcastFloat(PRIORITY_Y);
             moveTowardsLocation(new MapLocation(x, y));
+            //System.out.println("Moving towards priority location.");
+            rc.setIndicatorLine(rc.getLocation(), new MapLocation(x, y), 80, 220, 120);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    static boolean priorityLocExists() {
-
-        try {
-
-            // See if they are 0 or not
-            if (rc.readBroadcastFloat(PRIORITY_X) != 0 && rc.readBroadcastFloat(PRIORITY_Y) != 0) {
-                return true;
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return false;
     }
 
     static void moveTowardsEnemy(RobotInfo[] robotInfo) {
@@ -139,6 +87,50 @@ public class Nav {
             tryMove(rc.getLocation().directionTo(robotInfo[0].getLocation()).opposite(), 5, 36);
         } catch (Exception e) {
             System.out.println("Evade robot exception.");
+            e.printStackTrace();
+        }
+    }
+
+    static void dodgeIncomingBullets(BulletInfo[] incomingBullets) {
+
+        try {
+
+            for (BulletInfo info: incomingBullets) {
+                if (willCollideWithMe(info)) {
+
+                    // Find movement that won't collide
+                    float strideRadius = rc.getType().strideRadius;
+                    float x = rc.getLocation().x;
+                    float y = rc.getLocation().y;
+
+                    if (!willCollideWithMe(info, x, y+strideRadius) && rc.canMove(Direction.getNorth())) {
+                        rc.move(Direction.getNorth());
+                        return;
+                    } else if (!willCollideWithMe(info, x+strideRadius, y) && rc.canMove(Direction.getEast())) {
+                        rc.move(Direction.getEast());
+                        return;
+                    } else if (!willCollideWithMe(info, x, y-strideRadius) && rc.canMove(Direction.getSouth())) {
+                        rc.move(Direction.getSouth());
+                        return;
+                    } else if (!willCollideWithMe(info, x-strideRadius, y) && rc.canMove(Direction.getWest())) {
+                        rc.move(Direction.getWest());
+                        return;
+                    } else {
+                        //System.out.println("Failed to dodge bullet!");
+                        Direction dir = randomDirection();
+                        while (!rc.canMove(dir)) {
+                            dir = randomDirection();
+                        }
+
+                        rc.move(dir);
+                        return;
+                    }
+                }
+            }
+
+        } catch (Exception e) {
+            System.out.println("Dodge failed!");
+            e.printStackTrace();
         }
     }
 

@@ -9,8 +9,6 @@ import static artemis.Combat.*;
 
 public class Tank {
 
-    static boolean isLocLeader;
-
     static void run() {
 
         try {
@@ -23,7 +21,7 @@ public class Tank {
             // Tank move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
-            if (bulletInfo.length > 0) {
+            if (bulletCollisionImminent(bulletInfo)) {
                 dodgeIncomingBullets(bulletInfo);
             } else if (priorityLocExists()) {
                 moveToPriorityLoc();
@@ -41,8 +39,13 @@ public class Tank {
                 }
             }
 
-            // Attack enemies within range
-            defaultRangedAttack(enemyInfo);
+            // Reset priority loc details
+            resetPriorityStatus(enemyInfo);
+
+            // Default ranged attack
+            if (enemyInfo.length > 0) {
+                defaultRangedAttack(enemyInfo);
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -73,7 +76,10 @@ public class Tank {
 
     static void init() {
 
+        // Initialize variables
         isLocLeader = false;
+        prevPriorityX = 0;
+        prevPriorityY = 0;
     }
 
     static void updateRobotNum() {
