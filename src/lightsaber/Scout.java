@@ -34,7 +34,7 @@ public class Scout {
                 moveTowardsEnemy(enemyInfo);
                 setPriorityLoc(enemyInfo);
             } else {
-                moveTowardsLocation(initialArchonLocations[0]);
+                tryMove(randomDirection());
             }
 
             // Reset priority loc details

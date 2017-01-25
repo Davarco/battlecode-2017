@@ -38,6 +38,15 @@ public class Archon {
                 tryBuildGardener();
             }
 
+            // Donate bullets
+            if (rc.getRoundNum() % 500 == 0) {
+                rc.donate(rc.getTeamBullets());
+            }
+
+            if (rc.getRobotCount() > numOfGardeners*8) {
+                tryBuildGardener();
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -77,7 +86,7 @@ public class Archon {
 
     static void tryBuildGardener() {
 
-        final float radianInterval = (float)(Math.PI/12);
+        final float radianInterval = (float)(Math.PI/6);
 
         try {
 

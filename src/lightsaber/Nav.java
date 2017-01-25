@@ -1,7 +1,6 @@
 package lightsaber;
 
 import battlecode.common.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +11,10 @@ import static lightsaber.RobotPlayer.rc;
 import static lightsaber.Util.willCollideWithMe;
 
 public class Nav {
+
+    static void moveTowardsTree(TreeInfo[] treeInfo) {
+        moveTowardsLocation(treeInfo[0].getLocation());
+    }
 
     static void moveSmartPath(MapLocation goal) {
 
@@ -69,13 +72,13 @@ public class Nav {
             } else {
 
                 for (float f = 0; f < 360; f+=5) {
-                    if (rc.canMove(dir.rotateLeftDegrees(f))) {
-                        rc.move(dir.rotateLeftDegrees(f));
+                    if (rc.canMove(dir.rotateRightDegrees(f))) {
+                        rc.move(dir.rotateRightDegrees(f));
                         return;
                     }
                 }
 
-                System.out.println("Couldn't move out!");
+                //System.out.println("Couldn't move out!");
             }
 
         } catch (Exception e) {

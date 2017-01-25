@@ -1,14 +1,30 @@
 package lightsaber;
 
-import battlecode.common.BulletInfo;
-import battlecode.common.Direction;
-import battlecode.common.MapLocation;
-import battlecode.common.RobotInfo;
+import battlecode.common.*;
 
 import static lightsaber.Channels.*;
 import static lightsaber.RobotPlayer.*;
 
 public class Util {
+
+    static TreeInfo[] combineArrayData(TreeInfo[] t1, TreeInfo[] t2) {
+
+        // Combine data w/ iteration
+        TreeInfo[] info = new TreeInfo[t1.length+t2.length];
+        int idx = 0;
+
+        for (int i = 0; i < t1.length; i++) {
+            info[idx] = t1[i];
+            idx += 1;
+        }
+
+        for (int i = 0; i < t2.length; i++) {
+            info[idx] = t2[i];
+            idx += 1;
+        }
+
+        return info;
+    }
 
     static void resetPriorityStatus(RobotInfo[] enemyInfo) {
 
@@ -127,6 +143,28 @@ public class Util {
 
         // Set is 1/8
         return (rc.getHealth()*8 < rc.getType().maxHealth);
+    }
+
+    static boolean willCollideWithLocation(MapLocation startLoc, Direction moveDir, MapLocation targetLoc) {
+        MapLocation myLocation = targetLoc;
+
+        // Get relevant bullet information
+        Direction propagationDirection = moveDir;
+        MapLocation bulletLocation = startLoc;
+
+        // Calculate bullet relations to this robot
+        Direction directionToRobot = bulletLocation.directionTo(myLocation);
+        float distToRobot = bulletLocation.distanceTo(myLocation);
+        float theta = propagationDirection.radiansBetween(directionToRobot);
+
+        // If theta > 90 degrees, then the bullet is traveling away from us and we can break early
+        if (Math.abs(theta) > Math.PI/2) {
+            return false;
+        }
+
+        float perpendicularDist = (float)Math.abs(distToRobot * Math.sin(theta));
+
+        return (perpendicularDist <= rc.getType().bodyRadius);
     }
 
     static boolean willCollideWithMe(BulletInfo bullet) {

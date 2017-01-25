@@ -9,6 +9,7 @@ import java.util.HashMap;
 
 import static lightsaber.Channels.CHANNEL_TANK_SUM;
 import static lightsaber.Combat.defaultRangedAttack;
+import static lightsaber.Combat.destroyTreesInWay;
 import static lightsaber.Nav.*;
 import static lightsaber.RobotPlayer.*;
 import static lightsaber.Util.*;
@@ -55,6 +56,9 @@ public class Tank {
             if (enemyInfo.length > 0) {
                 defaultRangedAttack(enemyInfo);
             }
+
+            // Destroy trees in way if possible
+            //destroyTreesInWay();
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -20,6 +20,7 @@ public class Gardener {
     static int numTanks;
     static int numLumberjacks;
     static int totalRobots;
+    static int tries;
 
     static void run() {
 
@@ -38,6 +39,9 @@ public class Gardener {
             if (!isTreePlanted) {
                 if (enemyInfo.length > 0) {
                     evadeRobotGroup(enemyInfo);
+                    if (rc.hasRobotBuildRequirements(RobotType.SOLDIER)) {
+                        tryToBuildUnit(RobotType.SOLDIER);
+                    }
                 } else if (bulletCollisionImminent(bulletInfo)) {
                     dodgeIncomingBullets(bulletInfo);
                 } else if (teamInfo.length > 0) {
@@ -48,6 +52,12 @@ public class Gardener {
 
                 maxNumTrees = findMaxNumTrees() - 1;
                 //System.out.println("Number of max trees: " + maxNumTrees);
+            } else {
+                if (enemyInfo.length > 0) {
+                    if (rc.hasRobotBuildRequirements(RobotType.SOLDIER)) {
+                        tryToBuildUnit(RobotType.SOLDIER);
+                    }
+                }
             }
 
             // Build, water, and update trees
@@ -119,6 +129,7 @@ public class Gardener {
         numTanks = 0;
         numLumberjacks = 0;
         totalRobots = 0;
+        tries = 0;
     }
 
     static void addRobotAmt(RobotType robotType) {
@@ -181,7 +192,7 @@ public class Gardener {
         try {
 
             // Make sure it can build (might be constructing other tree)
-            if (rc.hasTreeBuildRequirements() && rc.onTheMap(rc.getLocation(), GARDENER_SPACE_RADIUS)) {
+            if (rc.hasTreeBuildRequirements() && (rc.onTheMap(rc.getLocation(), GARDENER_SPACE_RADIUS) || tries > 10)) {
 
                 // Search in intervals
                 float radians = 0;
@@ -191,12 +202,15 @@ public class Gardener {
                         rc.plantTree(buildDir);
                         //System.out.println("Planted tree.");
                         isTreePlanted = true;
+                        tries = 0;
                         return;
                     } else {
                         radians += radianInterval;
                     }
                 }
             }
+
+            tries++;
 
         } catch (Exception e) {
             e.printStackTrace();

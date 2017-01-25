@@ -11,41 +11,42 @@ products:
    src/lightsaber/Tank.java -> build/classes/lightsaber/Tank.class
    src/lightsaber/Util.java -> build/classes/lightsaber/Util.class
 binary dependencies:
-   src/artemis/Combat.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
+   src/artemis/Combat.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
    src/artemis/Combat.java -> build/classes/artemis/RobotPlayer.class
    src/artemis/Combat.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/lightsaber/Archon.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
+   src/lightsaber/Archon.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
    src/lightsaber/Archon.java -> build/classes/lightsaber/Channels.class
    src/lightsaber/Archon.java -> build/classes/lightsaber/RobotPlayer.class
    src/lightsaber/Archon.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/lightsaber/Combat.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
+   src/lightsaber/Combat.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/lightsaber/Combat.java -> build/classes/lightsaber/Channels.class
    src/lightsaber/Combat.java -> build/classes/lightsaber/RobotPlayer.class
    src/lightsaber/Combat.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/lightsaber/Gardener.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
+   src/lightsaber/Gardener.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
    src/lightsaber/Gardener.java -> build/classes/lightsaber/Channels.class
    src/lightsaber/Gardener.java -> build/classes/lightsaber/RobotPlayer.class
    src/lightsaber/Gardener.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/lightsaber/Lumberjack.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
+   src/lightsaber/Lumberjack.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
    src/lightsaber/Lumberjack.java -> build/classes/lightsaber/Channels.class
    src/lightsaber/Lumberjack.java -> build/classes/lightsaber/RobotPlayer.class
    src/lightsaber/Lumberjack.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/lightsaber/Nav.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
+   src/lightsaber/Nav.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
    src/lightsaber/Nav.java -> build/classes/lightsaber/Channels.class
    src/lightsaber/Nav.java -> build/classes/lightsaber/RobotPlayer.class
    src/lightsaber/Nav.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/lightsaber/Scout.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
+   src/lightsaber/Scout.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
    src/lightsaber/Scout.java -> build/classes/lightsaber/Channels.class
    src/lightsaber/Scout.java -> build/classes/lightsaber/RobotPlayer.class
    src/lightsaber/Scout.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/lightsaber/Soldier.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
+   src/lightsaber/Soldier.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
    src/lightsaber/Soldier.java -> build/classes/lightsaber/Channels.class
    src/lightsaber/Soldier.java -> build/classes/lightsaber/RobotPlayer.class
    src/lightsaber/Soldier.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/lightsaber/Tank.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
+   src/lightsaber/Tank.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
    src/lightsaber/Tank.java -> build/classes/lightsaber/Channels.class
    src/lightsaber/Tank.java -> build/classes/lightsaber/RobotPlayer.class
    src/lightsaber/Tank.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/lightsaber/Util.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.4.0/61cbbf3abfb5efa4f1f75b12770c8a509eb6ae1f/battlecode-2017.1.4.0.jar
+   src/lightsaber/Util.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
    src/lightsaber/Util.java -> build/classes/lightsaber/Channels.class
    src/lightsaber/Util.java -> build/classes/lightsaber/RobotPlayer.class
    src/lightsaber/Util.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
@@ -55,6 +56,7 @@ source dependencies:
    src/lightsaber/Archon.java -> src/lightsaber/Nav.java
    src/lightsaber/Archon.java -> src/lightsaber/Util.java
    src/lightsaber/Combat.java -> src/lightsaber/Combat.java
+   src/lightsaber/Combat.java -> src/lightsaber/Util.java
    src/lightsaber/Gardener.java -> src/lightsaber/Gardener.java
    src/lightsaber/Gardener.java -> src/lightsaber/Nav.java
    src/lightsaber/Gardener.java -> src/lightsaber/Util.java

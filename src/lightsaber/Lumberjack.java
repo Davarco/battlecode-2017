@@ -1,14 +1,14 @@
 package lightsaber;
 
-import battlecode.common.BulletInfo;
-import battlecode.common.Clock;
-import battlecode.common.RobotInfo;
-import battlecode.common.TreeInfo;
+import battlecode.common.*;
+import org.apache.commons.lang3.ArrayUtils;
 
+import java.lang.reflect.Array;
 import java.util.HashMap;
 
 import static lightsaber.Channels.CHANNEL_LUMBERJACK_SUM;
 import static lightsaber.Combat.defaultMeleeAttack;
+import static lightsaber.Combat.destroySurroundingTrees;
 import static lightsaber.Nav.*;
 import static lightsaber.RobotPlayer.*;
 import static lightsaber.Util.*;
@@ -28,19 +28,19 @@ public class Lumberjack {
             */
 
             // Lumberjack move
+            TreeInfo[] treeInfo = combineArrayData(rc.senseNearbyTrees(-1, Team.NEUTRAL), rc.senseNearbyTrees(-1, rc.getTeam().opponent()));
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
-            RobotInfo[] nearbyTeamInfo = rc.senseNearbyRobots(1.5f, rc.getTeam());
             if (bulletCollisionImminent(bulletInfo)) {
                 dodgeIncomingBullets(bulletInfo);
-            } else if (nearbyTeamInfo.length > 0) {
-                evadeRobotGroup(nearbyTeamInfo);
             } else if (priorityLocExists()) {
                 moveToPriorityLoc();
             } else if (enemyInfo.length > 0) {
                 moveTowardsEnemy(enemyInfo);
                 setPriorityLoc(enemyInfo);
                 isLocLeader = true;
+            } else if (treeInfo.length > 0) {
+                moveTowardsTree(treeInfo);
             } else {
                 tryMove(randomDirection());
             }
@@ -50,6 +50,9 @@ public class Lumberjack {
 
             // Default melee attack
             defaultMeleeAttack();
+
+            // Chop nearby trees
+            destroySurroundingTrees(treeInfo);
 
         } catch (Exception e) {
             e.printStackTrace();

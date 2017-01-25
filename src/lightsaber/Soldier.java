@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 import static lightsaber.Channels.CHANNEL_SOLDIER_SUM;
 import static lightsaber.Combat.defaultRangedAttack;
+import static lightsaber.Combat.destroyTreesInWay;
 import static lightsaber.Nav.*;
 import static lightsaber.RobotPlayer.*;
 import static lightsaber.Util.*;
@@ -39,6 +40,9 @@ public class Soldier {
             if (enemyInfo.length > 0) {
                 defaultRangedAttack(enemyInfo);
             }
+
+            // Destroy trees in way if possible
+            //destroyTreesInWay();
 
         } catch (Exception e) {
             e.printStackTrace();
