@@ -1,13 +1,13 @@
-package lightsaber;
+package sentinel;
 
 import battlecode.common.*;
 import java.util.HashMap;
 
-import static lightsaber.Channels.CHANNEL_SOLDIER_SUM;
-import static lightsaber.Combat.defaultRangedAttack;
-import static lightsaber.Nav.*;
-import static lightsaber.RobotPlayer.*;
-import static lightsaber.Util.*;
+import static sentinel.Channels.CHANNEL_SOLDIER_SUM;
+import static sentinel.Combat.defaultRangedAttack;
+import static sentinel.Nav.*;
+import static sentinel.RobotPlayer.*;
+import static sentinel.Util.*;
 
 public class Scout {
 
@@ -59,6 +59,10 @@ public class Scout {
                     evadeRobotGroup(enemyInfo);
                     MapLocation postLoc = rc.getLocation();
                     currentDirection = prevLoc.directionTo(postLoc);
+                    if (currentDirection == null) {
+                        int i = (int)(Math.random()*initialArchonLocations.length);
+                        currentDirection = rc.getLocation().directionTo(initialArchonLocations[i]);
+                    }
                 } else {
                     moveTowardsEnemy(enemyInfo);
                 }
@@ -83,6 +87,9 @@ public class Scout {
             if (enemyInfo.length > 0) {
                 defaultRangedAttack(enemyInfo);
             }
+
+            // Shake trees to farm bullets
+            shakeSurroundingTrees();
 
         } catch (Exception e) {
             e.printStackTrace();

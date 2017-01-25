@@ -1,11 +1,29 @@
-package lightsaber;
+package sentinel;
 
 import battlecode.common.*;
 
-import static lightsaber.Channels.*;
-import static lightsaber.RobotPlayer.*;
+import static sentinel.Channels.*;
+import static sentinel.RobotPlayer.*;
 
 public class Util {
+
+    static void shakeSurroundingTrees() {
+
+        try {
+
+            // Iterate through neutral tree list
+            TreeInfo[] treeInfo = rc.senseNearbyTrees(-1, Team.NEUTRAL);
+            for (TreeInfo info: treeInfo) {
+                if (rc.canShake(info.getID())) {
+                    rc.shake(info.getID());
+                    return;
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     static boolean enemyHostilesInRange(RobotInfo[] robotInfo) {
 

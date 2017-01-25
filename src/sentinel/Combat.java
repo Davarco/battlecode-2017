@@ -1,11 +1,11 @@
-package lightsaber;
+package sentinel;
 import battlecode.common.*;
 
-import static lightsaber.Channels.PRIORITY_X;
-import static lightsaber.Channels.PRIORITY_Y;
-import static lightsaber.RobotPlayer.rc;
-import static lightsaber.Util.willCollideWithLocation;
-import static lightsaber.Util.willCollideWithMe;
+import static sentinel.Channels.PRIORITY_X;
+import static sentinel.Channels.PRIORITY_Y;
+import static sentinel.RobotPlayer.rc;
+import static sentinel.Util.willCollideWithLocation;
+import static sentinel.Util.willCollideWithMe;
 
 public class Combat {
 
@@ -16,7 +16,7 @@ public class Combat {
             if (treeInfo.length > 0) {
 
                 // Chop at trees with robots
-                for (TreeInfo info : treeInfo) {
+                for (TreeInfo info: treeInfo) {
                     if (info.getContainedRobot() != null && rc.canChop(info.getID())) {
                         rc.chop(info.getID());
                         return;
@@ -36,6 +36,7 @@ public class Combat {
 
                 if (rc.canChop(treeInfo[minIdx].getID())) {
                     rc.chop(treeInfo[minIdx].getID());
+                    //System.out.println("Chopped tree @" + treeInfo[minIdx].toString());
                     return;
                 }
 

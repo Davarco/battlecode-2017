@@ -1,16 +1,18 @@
-package lightsaber;
+package sentinel;
 
 import battlecode.common.*;
 
-import static lightsaber.Channels.CHANNEL_TREE_COUNT;
-import static lightsaber.Nav.*;
-import static lightsaber.RobotPlayer.rc;
-import static lightsaber.Util.bulletCollisionImminent;
+import static sentinel.Channels.CHANNEL_TREE_COUNT;
+import static sentinel.Nav.*;
+import static sentinel.RobotPlayer.rc;
+import static sentinel.Util.bulletCollisionImminent;
+import static sentinel.Util.shakeSurroundingTrees;
 
 public class Archon {
 
     static boolean isGardenerBuilt;
     static int numOfGardeners;
+    static int numOfArchons;
     static int numOfTrees;
     static int maxGardeners;
 
@@ -43,9 +45,14 @@ public class Archon {
                 rc.donate(rc.getTeamBullets());
             }
 
-            if (rc.getRobotCount() > numOfGardeners*8) {
+            // Build gardener
+            if (rc.getRobotCount() > numOfGardeners*8*numOfArchons) {
+                //System.out.println("Trying to build gardener, " + numOfGardeners + " gardeners, " + rc.getRobotCount() + " total.");
                 tryBuildGardener();
             }
+
+            // Shake trees to farm bullets
+            shakeSurroundingTrees();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -82,6 +89,7 @@ public class Archon {
         numOfGardeners = 0;
         numOfTrees = 0;
         maxGardeners = 1;
+        numOfArchons = rc.getInitialArchonLocations(rc.getTeam()).length;
     }
 
     static void tryBuildGardener() {

@@ -1,12 +1,13 @@
-package lightsaber;
+package sentinel;
 
 import battlecode.common.*;
 
-import static lightsaber.Channels.CHANNEL_GARDENER_SUM;
-import static lightsaber.Channels.CHANNEL_TREE_SUM;
-import static lightsaber.Nav.*;
-import static lightsaber.RobotPlayer.rc;
-import static lightsaber.Util.bulletCollisionImminent;
+import static sentinel.Channels.CHANNEL_GARDENER_SUM;
+import static sentinel.Channels.CHANNEL_TREE_SUM;
+import static sentinel.Nav.*;
+import static sentinel.RobotPlayer.rc;
+import static sentinel.Util.bulletCollisionImminent;
+import static sentinel.Util.shakeSurroundingTrees;
 
 public class Gardener {
 
@@ -83,11 +84,11 @@ public class Gardener {
             }
 
             // Update number of max trees
-            maxNumTrees += openTreeSpaces() - 1;
+            maxNumTrees = openTreeSpaces() - 1;
 
             // Build, water, and update trees
             TreeInfo[] treeInfo = rc.senseNearbyTrees(-1, rc.getTeam());
-            if (numOfTrees <= maxNumTrees) {
+            if (numOfTrees <= maxNumTrees && numOfTrees <= totalRobots) {
                 //System.out.println("Trying to plant tree!");
                 tryBuildTree();
             }
@@ -97,6 +98,9 @@ public class Gardener {
             }
 
             updateTreeNum(treeInfo);
+
+            // Shake trees to farm bullets
+            shakeSurroundingTrees();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -252,11 +256,10 @@ public class Gardener {
             int total = 0;
             for (int i = 0; i < 6; i++) {
                 //if (rc.canPlantTree(buildDir)) {
-                if (rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, Team.A).length == 0 &&
-                        rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, Team.B).length == 0 &&
+                if (rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, rc.getTeam().opponent()).length == 0 &&
                         rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, Team.NEUTRAL).length == 0) {
                     rc.setIndicatorDot(rc.getLocation().add(radians, 2.0f), 0, 0, 255);
-                    System.out.println("Can plant tree!");
+                    //System.out.println("Can plant tree!");
                     total += 1;
                 }
                 radians += radianInterval;
@@ -285,7 +288,7 @@ public class Gardener {
                 //if (rc.canPlantTree(buildDir)) {
                 if (!rc.isCircleOccupied(rc.getLocation().add(radians, 2.0f), 1.0f)) {
                     rc.setIndicatorDot(rc.getLocation().add(radians, 2.0f), 0, 0, 255);
-                    System.out.println("Can plant tree!");
+                    //System.out.println("Can plant tree!");
                     total += 1;
                 }
                 radians += radianInterval;

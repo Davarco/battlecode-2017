@@ -1,31 +1,24 @@
-package lightsaber;
+package sentinel;
 
-import battlecode.common.*;
+import battlecode.common.BulletInfo;
+import battlecode.common.Clock;
+import battlecode.common.RobotInfo;
+
 import java.util.HashMap;
 
-import static lightsaber.Channels.CHANNEL_LUMBERJACK_SUM;
-import static lightsaber.Combat.defaultMeleeAttack;
-import static lightsaber.Combat.destroySurroundingTrees;
-import static lightsaber.Nav.*;
-import static lightsaber.RobotPlayer.*;
-import static lightsaber.Util.*;
+import static sentinel.Channels.CHANNEL_SOLDIER_SUM;
+import static sentinel.Combat.defaultRangedAttack;
+import static sentinel.Nav.*;
+import static sentinel.RobotPlayer.*;
+import static sentinel.Util.*;
 
-public class Lumberjack {
+public class Soldier {
 
     static void run() {
 
         try {
 
-            // Add obstacles
-            /*
-            TreeInfo[] treeInfo = rc.senseNearbyTrees();
-            RobotInfo[] robotInfo = rc.senseNearbyRobots();
-            addObstacles(treeInfo);
-            addObstacles(robotInfo);
-            */
-
-            // Lumberjack move
-            TreeInfo[] treeInfo = combineArrayData(rc.senseNearbyTrees(-1, Team.NEUTRAL), rc.senseNearbyTrees(-1, rc.getTeam().opponent()));
+            // Soldier move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
             if (bulletCollisionImminent(bulletInfo)) {
@@ -35,9 +28,6 @@ public class Lumberjack {
             } else if (enemyInfo.length > 0) {
                 moveTowardsEnemy(enemyInfo);
                 setPriorityLoc(enemyInfo);
-                isLocLeader = true;
-            } else if (treeInfo.length > 0) {
-                moveTowardsTree(treeInfo);
             } else {
                 tryMove(randomDirection());
             }
@@ -45,11 +35,16 @@ public class Lumberjack {
             // Reset priority loc details
             resetPriorityStatus(enemyInfo);
 
-            // Default melee attack
-            defaultMeleeAttack();
+            // Default ranged attack
+            if (enemyInfo.length > 0) {
+                defaultRangedAttack(enemyInfo);
+            }
 
-            // Chop nearby trees
-            destroySurroundingTrees(treeInfo);
+            // Destroy trees in way if possible
+            //destroyTreesInWay();
+
+            // Shake trees to farm bullets
+            shakeSurroundingTrees();
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -90,7 +85,7 @@ public class Lumberjack {
 
     static void updateRobotNum() {
         try {
-            rc.broadcast(CHANNEL_LUMBERJACK_SUM, rc.readBroadcast(CHANNEL_LUMBERJACK_SUM)+1);
+            rc.broadcast(CHANNEL_SOLDIER_SUM, rc.readBroadcast(CHANNEL_SOLDIER_SUM)+1);
         } catch (Exception e) {
             e.printStackTrace();
         }

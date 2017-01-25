@@ -1,32 +1,32 @@
-package lightsaber;
+package sentinel;
 
 import battlecode.common.*;
-import java.util.ArrayList;
-import java.util.List;
 
-import static lightsaber.Channels.PRIORITY_X;
-import static lightsaber.Channels.PRIORITY_Y;
-import static lightsaber.RobotPlayer.obstacleList;
-import static lightsaber.RobotPlayer.rc;
-import static lightsaber.Util.willCollideWithMe;
+import static sentinel.Channels.PRIORITY_X;
+import static sentinel.Channels.PRIORITY_Y;
+import static sentinel.RobotPlayer.obstacleList;
+import static sentinel.RobotPlayer.rc;
+import static sentinel.Util.willCollideWithMe;
 
 public class Nav {
 
     static void moveTowardsTree(TreeInfo[] treeInfo) {
-        moveTowardsLocation(treeInfo[0].getLocation());
-    }
-
-    static void moveSmartPath(MapLocation goal) {
 
         try {
 
-            class Node {
-                MapLocation loc;
-                Node prevNode;
+            // Move towards lowest hp tree if possible
+            int minIdx = 0;
+            float minHp = treeInfo[0].getHealth();
+            for (int i = 0; i < treeInfo.length; i++) {
+                TreeInfo info = treeInfo[i];
+                if (info.getHealth() < minHp) {
+                    minIdx = i;
+                    minHp = info.getHealth();
+                }
             }
 
-            List<MapLocation> closedSet = new ArrayList<>();
-            List<MapLocation> openSet = new ArrayList<>();
+            tryMove(rc.getLocation().directionTo(treeInfo[minIdx].getLocation()), 5, 3);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -41,7 +41,7 @@ public class Nav {
             float y = rc.readBroadcastFloat(PRIORITY_Y);
             moveTowardsLocation(new MapLocation(x, y));
             //System.out.println("Moving towards priority location.");
-            rc.setIndicatorLine(rc.getLocation(), new MapLocation(x, y), 80, 220, 120);
+            //rc.setIndicatorLine(rc.getLocation(), new MapLocation(x, y), 80, 220, 120);
 
         } catch (Exception e) {
             e.printStackTrace();

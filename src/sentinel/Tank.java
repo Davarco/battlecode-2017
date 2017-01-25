@@ -1,18 +1,16 @@
-package lightsaber;
+package sentinel;
 
 import battlecode.common.BulletInfo;
 import battlecode.common.Clock;
 import battlecode.common.RobotInfo;
-import battlecode.common.TreeInfo;
 
 import java.util.HashMap;
 
-import static lightsaber.Channels.CHANNEL_TANK_SUM;
-import static lightsaber.Combat.defaultRangedAttack;
-import static lightsaber.Combat.destroyTreesInWay;
-import static lightsaber.Nav.*;
-import static lightsaber.RobotPlayer.*;
-import static lightsaber.Util.*;
+import static sentinel.Channels.CHANNEL_TANK_SUM;
+import static sentinel.Combat.defaultRangedAttack;
+import static sentinel.Nav.*;
+import static sentinel.RobotPlayer.*;
+import static sentinel.Util.*;
 
 public class Tank {
 
@@ -59,6 +57,9 @@ public class Tank {
 
             // Destroy trees in way if possible
             //destroyTreesInWay();
+
+            // Shake trees to farm bullets
+            shakeSurroundingTrees();
 
         } catch (Exception e) {
             e.printStackTrace();
