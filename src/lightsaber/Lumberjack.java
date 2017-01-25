@@ -1,7 +1,6 @@
 package lightsaber;
 
 import battlecode.common.*;
-import java.lang.reflect.Array;
 import java.util.HashMap;
 
 import static lightsaber.Channels.CHANNEL_LUMBERJACK_SUM;

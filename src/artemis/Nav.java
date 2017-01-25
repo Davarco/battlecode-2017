@@ -2,7 +2,6 @@ package artemis;
 
 import battlecode.common.*;
 
-import java.awt.geom.FlatteningPathIterator;
 import java.util.Map;
 
 import static artemis.Channels.*;
