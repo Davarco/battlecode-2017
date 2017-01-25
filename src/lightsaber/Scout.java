@@ -11,6 +11,8 @@ import static lightsaber.Util.*;
 
 public class Scout {
 
+    static Direction currentDirection;
+
     static void run() {
 
         try {
@@ -22,6 +24,8 @@ public class Scout {
             addObstacles(treeInfo);
             addObstacles(robotInfo);
             */
+
+            /*
 
             // Scout move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
@@ -39,6 +43,41 @@ public class Scout {
 
             // Reset priority loc details
             resetPriorityStatus(enemyInfo);
+
+            */
+
+            // Scout move
+            BulletInfo[] bulletInfo = rc.senseNearbyBullets();
+            RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
+            if (bulletCollisionImminent(bulletInfo)) {
+                dodgeIncomingBullets(bulletInfo);
+            } else if (enemyInfo.length > 0) {
+
+                // Avoid combat units, but attack sole unarmed robots
+                if (enemyHostilesInRange(enemyInfo)) {
+                    MapLocation prevLoc = rc.getLocation();
+                    evadeRobotGroup(enemyInfo);
+                    MapLocation postLoc = rc.getLocation();
+                    currentDirection = prevLoc.directionTo(postLoc);
+                } else {
+                    moveTowardsEnemy(enemyInfo);
+                }
+            } else {
+
+                // See if robot can still move in current dir
+                if (rc.canMove(currentDirection)) {
+                    rc.move(currentDirection);
+                } else {
+                    MapLocation prevLoc = rc.getLocation();
+                    tryMove(randomDirection(), 5, 36);
+                    MapLocation postLoc = rc.getLocation();
+                    currentDirection = prevLoc.directionTo(postLoc);
+                    if (currentDirection == null) {
+                        int i = (int)(Math.random()*initialArchonLocations.length);
+                        currentDirection = rc.getLocation().directionTo(initialArchonLocations[i]);
+                    }
+                }
+            }
 
             // Default ranged attack
             if (enemyInfo.length > 0) {
@@ -82,6 +121,7 @@ public class Scout {
         obstacleList = new HashMap<>();
 
         initialArchonLocations = rc.getInitialArchonLocations(rc.getTeam().opponent());
+        currentDirection = rc.getLocation().directionTo(initialArchonLocations[0]);
     }
 
     static void updateRobotNum() {

@@ -52,6 +52,7 @@ public class Gardener {
 
                 maxNumTrees = findMaxNumTrees() - 1;
                 //System.out.println("Number of max trees: " + maxNumTrees);
+
             } else {
                 if (enemyInfo.length > 0) {
                     if (rc.hasRobotBuildRequirements(RobotType.SOLDIER)) {
@@ -60,22 +61,13 @@ public class Gardener {
                 }
             }
 
-            // Build, water, and update trees
-            TreeInfo[] treeInfo = rc.senseNearbyTrees(-1, rc.getTeam());
-            if (numOfTrees <= maxNumTrees) {
-                //System.out.println("Trying to plant tree!");
-                tryBuildTree();
-            }
-
-            if (treeInfo.length > 0) {
-                waterTreeGroup(treeInfo);
-            }
-
-            updateTreeNum(treeInfo);
-
             // Build units
             if (isTreePlanted) {
-                if (numScouts * 4 <= totalRobots) {
+                if (numSoldiers < 1) {
+                    if (rc.hasRobotBuildRequirements(RobotType.SOLDIER)) {
+                        tryToBuildUnit(RobotType.SOLDIER);
+                    }
+                } else if (numScouts * 4 <= totalRobots) {
                     if (rc.hasRobotBuildRequirements(RobotType.SCOUT)) {
                         tryToBuildUnit(RobotType.SCOUT);
                     }
@@ -89,6 +81,22 @@ public class Gardener {
                     }
                 }
             }
+
+            // Update number of max trees
+            maxNumTrees += openTreeSpaces() - 1;
+
+            // Build, water, and update trees
+            TreeInfo[] treeInfo = rc.senseNearbyTrees(-1, rc.getTeam());
+            if (numOfTrees <= maxNumTrees) {
+                //System.out.println("Trying to plant tree!");
+                tryBuildTree();
+            }
+
+            if (treeInfo.length > 0) {
+                waterTreeGroup(treeInfo);
+            }
+
+            updateTreeNum(treeInfo);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -150,13 +158,15 @@ public class Gardener {
 
         try {
 
-            final float radianInterval = (float)(Math.PI/6);
+            final float radianInterval = (float)(Math.PI/3);
 
             if (rc.isBuildReady() && rc.hasRobotBuildRequirements(robotType) && rc.getBuildCooldownTurns() == 0) {
 
                 // Check around robot
                 float radians = 0;
+
                 while (radians < Math.PI * 2) {
+                    rc.setIndicatorDot(rc.getLocation().add(radians, 2.0f), 0, 0, 0);
                     Direction buildDir = new Direction(radians);
                     if (rc.canBuildRobot(robotType, buildDir)) {
                         rc.buildRobot(robotType, buildDir);
@@ -167,9 +177,23 @@ public class Gardener {
                         radians += radianInterval;
                     }
                 }
-            }
 
-            //System.out.println("Unable to build robot type " + robotType.toString() + ".");
+                /*
+                for (int i = 0; i < 5; i++) {
+                    Direction buildDir = new Direction(radians);
+                    if (rc.canBuildRobot(robotType, buildDir)) {
+                        rc.buildRobot(robotType, buildDir);
+                        addRobotAmt(robotType);
+                        //System.out.println("Successful build!");
+                        return;
+                    }
+
+                    radians += radianInterval;
+                }
+                */
+
+                //System.out.println("Unable to build robot type " + robotType.toString() + ".");
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -187,7 +211,7 @@ public class Gardener {
 
     static void tryBuildTree() {
 
-        final float radianInterval = (float)(Math.PI/6);
+        final float radianInterval = (float)(Math.PI/3);
 
         try {
 
@@ -217,6 +241,37 @@ public class Gardener {
         }
     }
 
+    static int openTreeSpaces() {
+
+        final float radianInterval = (float)(Math.PI/3);
+
+        try {
+
+            // Search in intervals
+            float radians = 0;
+            int total = 0;
+            for (int i = 0; i < 6; i++) {
+                //if (rc.canPlantTree(buildDir)) {
+                if (rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, Team.A).length == 0 &&
+                        rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, Team.B).length == 0 &&
+                        rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, Team.NEUTRAL).length == 0) {
+                    rc.setIndicatorDot(rc.getLocation().add(radians, 2.0f), 0, 0, 255);
+                    System.out.println("Can plant tree!");
+                    total += 1;
+                }
+                radians += radianInterval;
+            }
+
+            return total-1;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return 0;
+    }
+
+
     static int findMaxNumTrees() {
 
         final float radianInterval = (float)(Math.PI/3);
@@ -226,15 +281,17 @@ public class Gardener {
             // Search in intervals
             float radians = 0;
             int total = 0;
-            for (int i = 0; i < 5; i++) {
-                Direction buildDir = new Direction(radians);
-                if (rc.canPlantTree(buildDir)) {
+            for (int i = 0; i < 6; i++) {
+                //if (rc.canPlantTree(buildDir)) {
+                if (!rc.isCircleOccupied(rc.getLocation().add(radians, 2.0f), 1.0f)) {
+                    rc.setIndicatorDot(rc.getLocation().add(radians, 2.0f), 0, 0, 255);
+                    System.out.println("Can plant tree!");
                     total += 1;
                 }
                 radians += radianInterval;
             }
 
-            return total;
+            return total-1;
 
         } catch (Exception e) {
             e.printStackTrace();

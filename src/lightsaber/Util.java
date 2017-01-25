@@ -7,6 +7,26 @@ import static lightsaber.RobotPlayer.*;
 
 public class Util {
 
+    static boolean enemyHostilesInRange(RobotInfo[] robotInfo) {
+
+        try {
+
+            // See if units are hostile if exist
+            if (robotInfo.length > 0) {
+                for (RobotInfo info : robotInfo) {
+                    if (!info.getType().equals(RobotType.GARDENER) && !info.getType().equals(RobotType.ARCHON)) {
+                        return true;
+                    }
+                }
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
     static TreeInfo[] combineArrayData(TreeInfo[] t1, TreeInfo[] t2) {
 
         // Combine data w/ iteration
