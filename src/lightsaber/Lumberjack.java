@@ -1,8 +1,6 @@
 package lightsaber;
 
 import battlecode.common.*;
-import org.apache.commons.lang3.ArrayUtils;
-
 import java.lang.reflect.Array;
 import java.util.HashMap;
 

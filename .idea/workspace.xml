@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f15232b3-87af-498e-a403-d16ef8a70bcf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battlecode-player-upload.jar" afterPath="$PROJECT_DIR$/battlecode-player-upload.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/artemis/Nav.class" afterPath="$PROJECT_DIR$/build/classes/artemis/Nav.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/lightsaber/Archon.class" afterPath="$PROJECT_DIR$/build/classes/lightsaber/Archon.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/lightsaber/Combat.class" afterPath="$PROJECT_DIR$/build/classes/lightsaber/Combat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/lightsaber/Gardener.class" afterPath="$PROJECT_DIR$/build/classes/lightsaber/Gardener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/lightsaber/Lumberjack.class" afterPath="$PROJECT_DIR$/build/classes/lightsaber/Lumberjack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/lightsaber/Nav$1Node.class" afterPath="$PROJECT_DIR$/build/classes/lightsaber/Nav$1Node.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/lightsaber/Nav.class" afterPath="$PROJECT_DIR$/build/classes/lightsaber/Nav.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/lightsaber/Scout.class" afterPath="$PROJECT_DIR$/build/classes/lightsaber/Scout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/lightsaber/Soldier.class" afterPath="$PROJECT_DIR$/build/classes/lightsaber/Soldier.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/lightsaber/Tank.class" afterPath="$PROJECT_DIR$/build/classes/lightsaber/Tank.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/lightsaber/Util.class" afterPath="$PROJECT_DIR$/build/classes/lightsaber/Util.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/bc.jar" afterPath="$PROJECT_DIR$/build/libs/bc.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/resources/app.asar" afterPath="$PROJECT_DIR$/client/resources/app.asar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matches/artemis-vs-lightsaber-on-Enclosure.bc17" afterPath="$PROJECT_DIR$/matches/artemis-vs-lightsaber-on-Enclosure.bc17" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/examplefuncsplayer.RobotPlayerTest.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/examplefuncsplayer.RobotPlayerTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/examplefuncsplayer.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/examplefuncsplayer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/TEST-examplefuncsplayer.RobotPlayerTest.xml" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-examplefuncsplayer.RobotPlayerTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis.relations" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis.relations" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/artemis/Nav.java" afterPath="$PROJECT_DIR$/src/artemis/Nav.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lightsaber/Archon.java" afterPath="$PROJECT_DIR$/src/lightsaber/Archon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lightsaber/Combat.java" afterPath="$PROJECT_DIR$/src/lightsaber/Combat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lightsaber/Gardener.java" afterPath="$PROJECT_DIR$/src/lightsaber/Gardener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lightsaber/Lumberjack.java" afterPath="$PROJECT_DIR$/src/lightsaber/Lumberjack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lightsaber/Nav.java" afterPath="$PROJECT_DIR$/src/lightsaber/Nav.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lightsaber/Scout.java" afterPath="$PROJECT_DIR$/src/lightsaber/Scout.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lightsaber/Soldier.java" afterPath="$PROJECT_DIR$/src/lightsaber/Soldier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lightsaber/Tank.java" afterPath="$PROJECT_DIR$/src/lightsaber/Tank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lightsaber/Util.java" afterPath="$PROJECT_DIR$/src/lightsaber/Util.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -73,20 +37,18 @@
       <file leaf-file-name="Archon.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lightsaber/Archon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="36">
+              <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Combat.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Combat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lightsaber/Combat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="116" column="87" lean-forward="false" selection-start-line="116" selection-start-column="87" selection-end-line="116" selection-end-column="87" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -97,8 +59,8 @@
       <file leaf-file-name="Gardener.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lightsaber/Gardener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="194" column="117" lean-forward="false" selection-start-line="194" selection-start-column="117" selection-end-line="194" selection-end-column="117" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -106,14 +68,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lumberjack.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Lumberjack.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lightsaber/Lumberjack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="32" column="86" lean-forward="false" selection-start-line="32" selection-start-column="86" selection-end-line="32" selection-end-column="86" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="36">
+              <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -607,12 +567,12 @@
         <option value="$PROJECT_DIR$/src/lightsaber/Soldier.java" />
         <option value="$PROJECT_DIR$/src/lightsaber/Tank.java" />
         <option value="$PROJECT_DIR$/src/lightsaber/Nav.java" />
-        <option value="$PROJECT_DIR$/src/lightsaber/Lumberjack.java" />
         <option value="$PROJECT_DIR$/src/lightsaber/Util.java" />
         <option value="$PROJECT_DIR$/src/lightsaber/Archon.java" />
         <option value="$PROJECT_DIR$/src/artemis/Nav.java" />
         <option value="$PROJECT_DIR$/src/lightsaber/Gardener.java" />
         <option value="$PROJECT_DIR$/src/lightsaber/Combat.java" />
+        <option value="$PROJECT_DIR$/src/lightsaber/Lumberjack.java" />
       </list>
     </option>
   </component>
@@ -1311,16 +1271,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lightsaber/Archon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lightsaber/Soldier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -1361,16 +1311,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lightsaber/Lumberjack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="32" column="86" lean-forward="false" selection-start-line="32" selection-start-column="86" selection-end-line="32" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/artemis/Nav.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -1379,23 +1319,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lightsaber/Gardener.java">
+    <entry file="file://$PROJECT_DIR$/src/lightsaber/Combat.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="194" column="117" lean-forward="false" selection-start-line="194" selection-start-column="117" selection-end-line="194" selection-end-column="117" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lightsaber/Combat.java">
+    <entry file="file://$PROJECT_DIR$/src/lightsaber/Archon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="116" column="87" lean-forward="false" selection-start-line="116" selection-start-column="87" selection-end-line="116" selection-end-column="87" />
+        <state relative-caret-position="36">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lightsaber/Gardener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lightsaber/Lumberjack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="27" lean-forward="false" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
