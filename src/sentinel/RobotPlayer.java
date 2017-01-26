@@ -1,5 +1,6 @@
 package sentinel;
 
+import battlecode.common.Direction;
 import battlecode.common.GameActionException;
 import battlecode.common.MapLocation;
 import battlecode.common.RobotController;
@@ -12,7 +13,9 @@ public strictfp class RobotPlayer {
     static RobotController rc;
 
     // For coordinated attacking
+    static Direction currentDirection;
     static boolean isLocLeader;
+    static boolean isNearDeath;
     static float prevPriorityX;
     static float prevPriorityY;
 

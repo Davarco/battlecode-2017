@@ -2,12 +2,13 @@ package sentinel;
 
 import battlecode.common.*;
 
-import static sentinel.Channels.CHANNEL_LUMBERJACK_SUM;
+import static sentinel.Channels.CHANNEL_LUMBERJACK_COUNT;
 import static sentinel.Combat.defaultMeleeAttack;
 import static sentinel.Combat.destroySurroundingTrees;
 import static sentinel.Nav.*;
 import static sentinel.RobotPlayer.*;
 import static sentinel.Util.*;
+
 
 public class Lumberjack {
 
@@ -43,7 +44,20 @@ public class Lumberjack {
                 setPriorityLoc(enemyInfo);
                 isLocLeader = true;
             } else {
-                tryMove(randomDirection());
+
+                // See if robot can still move in current dir
+                if (rc.canMove(currentDirection)) {
+                    rc.move(currentDirection);
+                } else {
+                    MapLocation prevLoc = rc.getLocation();
+                    tryMove(randomDirection(), 5, 36);
+                    MapLocation postLoc = rc.getLocation();
+                    currentDirection = prevLoc.directionTo(postLoc);
+                    if (currentDirection == null) {
+                        int i = (int)(Math.random()*initialArchonLocations.length);
+                        currentDirection = rc.getLocation().directionTo(initialArchonLocations[i]);
+                    }
+                }
             }
 
             // Reset priority loc details
@@ -57,6 +71,12 @@ public class Lumberjack {
 
             // Shake trees to farm bullets
             shakeSurroundingTrees();
+
+            // Re update if near death
+            if (nearDeath() && !isNearDeath) {
+                isNearDeath = true;
+                rc.broadcast(CHANNEL_LUMBERJACK_COUNT, rc.readBroadcast(CHANNEL_LUMBERJACK_COUNT)-1);
+            }
 
             // Implement endgame
             if (rc.getRoundNum() == rc.getRoundLimit()-1) {
@@ -95,14 +115,16 @@ public class Lumberjack {
 
         // Initialize variables
         isLocLeader = false;
+        isNearDeath = false;
         prevPriorityX = 0;
         prevPriorityY = 0;
         //obstacleList = new HashMap<>();
-    }
+        initialArchonLocations = rc.getInitialArchonLocations(rc.getTeam().opponent());
+        currentDirection = rc.getLocation().directionTo(initialArchonLocations[0]);
 
-    static void updateRobotNum() {
+        // Increase robot type count
         try {
-            rc.broadcast(CHANNEL_LUMBERJACK_SUM, rc.readBroadcast(CHANNEL_LUMBERJACK_SUM)+1);
+            rc.broadcast(CHANNEL_LUMBERJACK_COUNT, rc.readBroadcast(CHANNEL_LUMBERJACK_COUNT)+1);
         } catch (Exception e) {
             e.printStackTrace();
         }

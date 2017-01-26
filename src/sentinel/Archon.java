@@ -2,12 +2,13 @@ package sentinel;
 
 import battlecode.common.*;
 
+import static sentinel.Channels.CHANNEL_ARCHON_COUNT;
 import static sentinel.Channels.CHANNEL_GARDENER_COUNT;
-import static sentinel.Channels.CHANNEL_GARDENER_SUM;
-import static sentinel.Channels.CHANNEL_TREE_COUNT;
 import static sentinel.Nav.*;
+import static sentinel.RobotPlayer.isNearDeath;
 import static sentinel.RobotPlayer.rc;
 import static sentinel.Util.bulletCollisionImminent;
+import static sentinel.Util.nearDeath;
 import static sentinel.Util.shakeSurroundingTrees;
 
 public class Archon {
@@ -47,6 +48,12 @@ public class Archon {
 
             // Shake trees to farm bullets
             shakeSurroundingTrees();
+
+            // Re update if near death
+            if (nearDeath() && !isNearDeath) {
+                isNearDeath = true;
+                rc.broadcast(CHANNEL_ARCHON_COUNT, rc.readBroadcast(CHANNEL_ARCHON_COUNT)-1);
+            }
 
             // Implement endgame
             if (rc.getRoundNum() == rc.getRoundLimit()-1) {
@@ -88,6 +95,13 @@ public class Archon {
         numOfGardeners = 0;
         maxGardeners = 1;
         numOfArchons = rc.getInitialArchonLocations(rc.getTeam()).length;
+
+        // Increase robot type count
+        try {
+            rc.broadcast(CHANNEL_ARCHON_COUNT, rc.readBroadcast(CHANNEL_ARCHON_COUNT)+1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     static void tryBuildGardener() {

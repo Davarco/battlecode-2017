@@ -4,7 +4,7 @@ import battlecode.common.BulletInfo;
 import battlecode.common.Clock;
 import battlecode.common.RobotInfo;
 
-import static sentinel.Channels.CHANNEL_TANK_SUM;
+import static sentinel.Channels.CHANNEL_TANK_COUNT;
 import static sentinel.Combat.defaultRangedAttack;
 import static sentinel.Nav.*;
 import static sentinel.RobotPlayer.*;
@@ -59,6 +59,12 @@ public class Tank {
             // Shake trees to farm bullets
             shakeSurroundingTrees();
 
+            // Re update if near death
+            if (nearDeath() && !isNearDeath) {
+                isNearDeath = true;
+                rc.broadcast(CHANNEL_TANK_COUNT, rc.readBroadcast(CHANNEL_TANK_COUNT)-1);
+            }
+
             // Implement endgame
             if (rc.getRoundNum() == rc.getRoundLimit()-1) {
                 rc.donate(rc.getTeamBullets());
@@ -99,11 +105,10 @@ public class Tank {
         prevPriorityX = 0;
         prevPriorityY = 0;
         //obstacleList = new HashMap<>();
-    }
 
-    static void updateRobotNum() {
+        // Increase robot type count
         try {
-            rc.broadcast(CHANNEL_TANK_SUM, rc.readBroadcast(CHANNEL_TANK_SUM)+1);
+            rc.broadcast(CHANNEL_TANK_COUNT, rc.readBroadcast(CHANNEL_TANK_COUNT)+1);
         } catch (Exception e) {
             e.printStackTrace();
         }

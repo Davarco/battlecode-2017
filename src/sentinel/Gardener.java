@@ -2,10 +2,9 @@ package sentinel;
 
 import battlecode.common.*;
 
-import static sentinel.Channels.CHANNEL_GARDENER_COUNT;
-import static sentinel.Channels.CHANNEL_GARDENER_SUM;
-import static sentinel.Channels.CHANNEL_TREE_SUM;
+import static sentinel.Channels.*;
 import static sentinel.Nav.*;
+import static sentinel.RobotPlayer.isNearDeath;
 import static sentinel.RobotPlayer.rc;
 import static sentinel.Util.bulletCollisionImminent;
 import static sentinel.Util.nearDeath;
@@ -13,18 +12,19 @@ import static sentinel.Util.shakeSurroundingTrees;
 
 public class Gardener {
 
-    static final float GARDENER_SPACE_RADIUS = 4.0f;
+    static final float GARDENER_SPACE_RADIUS = 3.0f;
 
+    // Tree building
     static boolean isTreePlanted;
-    static boolean isNearDeath;
     static int numOfTrees;
-    static int maxNumTrees;
     static int numSoldiers;
+    static int tries;
+
+    // Keep number totals
     static int numScouts;
     static int numTanks;
     static int numLumberjacks;
     static int totalRobots;
-    static int tries;
 
     static void run() {
 
@@ -48,10 +48,6 @@ public class Gardener {
                 } else {
                     gardenerDefaultMove();
                 }
-
-                maxNumTrees = findMaxNumTrees() - 1;
-                //System.out.println("Number of max trees: " + maxNumTrees);
-
             } else {
                 if (enemyInfo.length > 0) {
                     if (rc.hasRobotBuildRequirements(RobotType.SOLDIER)) {
@@ -60,17 +56,47 @@ public class Gardener {
                 }
             }
 
-            // Build units
+            // Make sure the first soldier is built
             if (isTreePlanted) {
                 if (numSoldiers < 1) {
                     if (rc.hasRobotBuildRequirements(RobotType.SOLDIER)) {
                         tryToBuildUnit(RobotType.SOLDIER);
                     }
-                } else if (numScouts * 4 <= totalRobots) {
+                }
+            }
+
+            // Build, water, and update trees
+            TreeInfo[] treeInfo = rc.senseNearbyTrees(-1, rc.getTeam());
+            if (openTreeSpaces() > 1 && numOfTrees <= totalRobots) {
+                //System.out.println("Trying to plant tree!");
+                tryBuildTree();
+            }
+
+            /*
+            TreeInfo[] treeInfo = rc.senseNearbyTrees(-1, rc.getTeam());
+            if (numOfTrees <= maxNumTrees && numOfTrees <= totalRobots) {
+                //System.out.println("Trying to plant tree!");
+                tryBuildTree();
+            }
+            */
+
+            if (treeInfo.length > 0) {
+                waterTreeGroup(treeInfo);
+            }
+
+            updateTreeNum(treeInfo);
+
+            // Build units
+            int totalArchons = rc.readBroadcast(CHANNEL_ARCHON_COUNT);
+            int totalScouts = rc.readBroadcast(CHANNEL_SCOUT_COUNT);
+            int totalSoldiers = rc.readBroadcast(CHANNEL_SOLDIER_COUNT);
+            int totalLumberjacks = rc.readBroadcast(CHANNEL_LUMBERJACK_COUNT);
+            if (isTreePlanted) {
+                if ((numScouts*6 < totalRobots && totalSoldiers >= 4*totalArchons) || (totalScouts == 0 && rc.getTeamBullets() >= 100)) {
                     if (rc.hasRobotBuildRequirements(RobotType.SCOUT)) {
                         tryToBuildUnit(RobotType.SCOUT);
                     }
-                } else if (numLumberjacks * 16 <= totalRobots) {
+                } else if (numLumberjacks*8 < totalRobots && totalSoldiers >= 4 || (totalLumberjacks == 0 && rc.getTeamBullets() >= 100)) {
                     if (rc.hasRobotBuildRequirements(RobotType.LUMBERJACK)) {
                         tryToBuildUnit(RobotType.LUMBERJACK);
                     }
@@ -80,22 +106,6 @@ public class Gardener {
                     }
                 }
             }
-
-            // Update number of max trees
-            maxNumTrees = openTreeSpaces() - 1;
-
-            // Build, water, and update trees
-            TreeInfo[] treeInfo = rc.senseNearbyTrees(-1, rc.getTeam());
-            if (numOfTrees <= maxNumTrees && numOfTrees <= totalRobots) {
-                //System.out.println("Trying to plant tree!");
-                tryBuildTree();
-            }
-
-            if (treeInfo.length > 0) {
-                waterTreeGroup(treeInfo);
-            }
-
-            updateTreeNum(treeInfo);
 
             // Shake trees to farm bullets
             shakeSurroundingTrees();
@@ -145,7 +155,6 @@ public class Gardener {
         isTreePlanted = false;
         isNearDeath = false;
         numOfTrees = 0;
-        maxNumTrees = 5;
         numSoldiers = 0;
         numScouts = 0;
         numTanks = 0;
@@ -153,6 +162,7 @@ public class Gardener {
         totalRobots = 0;
         tries = 0;
 
+        // Increase robot type count
         try {
             rc.broadcast(CHANNEL_GARDENER_COUNT, rc.readBroadcast(CHANNEL_GARDENER_COUNT)+1);
         } catch (Exception e) {
@@ -186,9 +196,9 @@ public class Gardener {
                 float radians = 0;
 
                 while (radians < Math.PI * 2) {
-                    rc.setIndicatorDot(rc.getLocation().add(radians, 2.0f), 0, 0, 0);
                     Direction buildDir = new Direction(radians);
                     if (rc.canBuildRobot(robotType, buildDir)) {
+                        rc.setIndicatorDot(rc.getLocation().add(radians, 2.0f), 0, 0, 0);
                         rc.buildRobot(robotType, buildDir);
                         addRobotAmt(robotType);
                         //System.out.println("Successful build!");
@@ -264,15 +274,20 @@ public class Gardener {
             for (int i = 0; i < 6; i++) {
                 //if (rc.canPlantTree(buildDir)) {
                 if (rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, rc.getTeam().opponent()).length == 0 &&
-                        rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, Team.NEUTRAL).length == 0) {
-                    rc.setIndicatorDot(rc.getLocation().add(radians, 2.0f), 0, 0, 255);
+                        rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, rc.getTeam()).length == 0 &&
+                        rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, Team.NEUTRAL).length == 0 &&
+                        rc.senseNearbyRobots(rc.getLocation().add(radians, 2.0f), 1.0f, rc.getTeam()).length == 0 &&
+                        rc.onTheMap(rc.getLocation().add(radians, 2.0f), 1.0f) //&&
+                        //!rc.isCircleOccupied(rc.getLocation().add(radians, 2.0f), 1.0f)
+                        ) {
+                    rc.setIndicatorDot(rc.getLocation().add(radians, 2.0f), 255, 255, 0);
                     //System.out.println("Can plant tree!");
                     total += 1;
                 }
                 radians += radianInterval;
             }
 
-            return total-1;
+            return total;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -281,7 +296,7 @@ public class Gardener {
         return 0;
     }
 
-
+    /*
     static int findMaxNumTrees() {
 
         final float radianInterval = (float)(Math.PI/3);
@@ -293,7 +308,7 @@ public class Gardener {
             int total = 0;
             for (int i = 0; i < 6; i++) {
                 //if (rc.canPlantTree(buildDir)) {
-                if (!rc.isCircleOccupied(rc.getLocation().add(radians, 2.0f), 1.0f)) {
+                if (!rc.isCircleOccupied(rc.getLocation().add(radians, 2.0f), 1.0f) && rc.onTheMap(rc.getLocation().add(radians, 2.0f), 1.0f)) {
                     rc.setIndicatorDot(rc.getLocation().add(radians, 2.0f), 0, 0, 255);
                     //System.out.println("Can plant tree!");
                     total += 1;
@@ -301,7 +316,7 @@ public class Gardener {
                 radians += radianInterval;
             }
 
-            return total-1;
+            return total;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -309,6 +324,7 @@ public class Gardener {
 
         return 0;
     }
+    */
 
     static void updateTreeNum(TreeInfo[] treeInfo) {
 

@@ -1,17 +1,15 @@
 package sentinel;
 
 import battlecode.common.*;
-import java.util.HashMap;
 
-import static sentinel.Channels.CHANNEL_SOLDIER_SUM;
+import static sentinel.Channels.CHANNEL_GARDENER_COUNT;
+import static sentinel.Channels.CHANNEL_SCOUT_COUNT;
 import static sentinel.Combat.defaultRangedAttack;
 import static sentinel.Nav.*;
 import static sentinel.RobotPlayer.*;
 import static sentinel.Util.*;
 
 public class Scout {
-
-    static Direction currentDirection;
 
     static void run() {
 
@@ -91,6 +89,12 @@ public class Scout {
             // Shake trees to farm bullets
             shakeSurroundingTrees();
 
+            // Re update if near death
+            if (nearDeath() && !isNearDeath) {
+                isNearDeath = true;
+                rc.broadcast(CHANNEL_SCOUT_COUNT, rc.readBroadcast(CHANNEL_SCOUT_COUNT)-1);
+            }
+
             // Implement endgame
             if (rc.getRoundNum() == rc.getRoundLimit()-1) {
                 rc.donate(rc.getTeamBullets());
@@ -128,17 +132,15 @@ public class Scout {
 
         // Initialize variables
         isLocLeader = false;
+        isNearDeath = false;
         prevPriorityX = 0;
         prevPriorityY = 0;
-        obstacleList = new HashMap<>();
-
         initialArchonLocations = rc.getInitialArchonLocations(rc.getTeam().opponent());
         currentDirection = rc.getLocation().directionTo(initialArchonLocations[0]);
-    }
 
-    static void updateRobotNum() {
+        // Increase robot type count
         try {
-            rc.broadcast(CHANNEL_SOLDIER_SUM, rc.readBroadcast(CHANNEL_SOLDIER_SUM)+1);
+            rc.broadcast(CHANNEL_SCOUT_COUNT, rc.readBroadcast(CHANNEL_SCOUT_COUNT)+1);
         } catch (Exception e) {
             e.printStackTrace();
         }
