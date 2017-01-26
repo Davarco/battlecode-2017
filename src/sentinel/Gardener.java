@@ -2,11 +2,13 @@ package sentinel;
 
 import battlecode.common.*;
 
+import static sentinel.Channels.CHANNEL_GARDENER_COUNT;
 import static sentinel.Channels.CHANNEL_GARDENER_SUM;
 import static sentinel.Channels.CHANNEL_TREE_SUM;
 import static sentinel.Nav.*;
 import static sentinel.RobotPlayer.rc;
 import static sentinel.Util.bulletCollisionImminent;
+import static sentinel.Util.nearDeath;
 import static sentinel.Util.shakeSurroundingTrees;
 
 public class Gardener {
@@ -14,6 +16,7 @@ public class Gardener {
     static final float GARDENER_SPACE_RADIUS = 4.0f;
 
     static boolean isTreePlanted;
+    static boolean isNearDeath;
     static int numOfTrees;
     static int maxNumTrees;
     static int numSoldiers;
@@ -26,11 +29,6 @@ public class Gardener {
     static void run() {
 
         try {
-
-            // Execute every six rounds
-            if (rc.getRoundNum() % 6 == 0) {
-                updateRobotNum();
-            }
 
             // Gardener movement
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
@@ -102,6 +100,17 @@ public class Gardener {
             // Shake trees to farm bullets
             shakeSurroundingTrees();
 
+            // Re update if near death
+            if (nearDeath() && !isNearDeath) {
+                isNearDeath = true;
+                rc.broadcast(CHANNEL_GARDENER_COUNT, rc.readBroadcast(CHANNEL_GARDENER_COUNT)-1);
+            }
+
+            // Implement endgame
+            if (rc.getRoundNum() == rc.getRoundLimit()-1) {
+                rc.donate(rc.getTeamBullets());
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -134,6 +143,7 @@ public class Gardener {
 
         // Initialize variables
         isTreePlanted = false;
+        isNearDeath = false;
         numOfTrees = 0;
         maxNumTrees = 5;
         numSoldiers = 0;
@@ -142,6 +152,12 @@ public class Gardener {
         numLumberjacks = 0;
         totalRobots = 0;
         tries = 0;
+
+        try {
+            rc.broadcast(CHANNEL_GARDENER_COUNT, rc.readBroadcast(CHANNEL_GARDENER_COUNT)+1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     static void addRobotAmt(RobotType robotType) {
@@ -199,15 +215,6 @@ public class Gardener {
                 //System.out.println("Unable to build robot type " + robotType.toString() + ".");
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    static void updateRobotNum() {
-        try {
-            rc.broadcast(CHANNEL_GARDENER_SUM, rc.readBroadcast(CHANNEL_GARDENER_SUM)+1);
-            rc.broadcast(CHANNEL_TREE_SUM, rc.readBroadcast(CHANNEL_TREE_SUM)+numOfTrees);
         } catch (Exception e) {
             e.printStackTrace();
         }

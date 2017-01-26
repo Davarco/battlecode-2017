@@ -4,8 +4,6 @@ import battlecode.common.BulletInfo;
 import battlecode.common.Clock;
 import battlecode.common.RobotInfo;
 
-import java.util.HashMap;
-
 import static sentinel.Channels.CHANNEL_TANK_SUM;
 import static sentinel.Combat.defaultRangedAttack;
 import static sentinel.Nav.*;
@@ -61,6 +59,11 @@ public class Tank {
             // Shake trees to farm bullets
             shakeSurroundingTrees();
 
+            // Implement endgame
+            if (rc.getRoundNum() == rc.getRoundLimit()-1) {
+                rc.donate(rc.getTeamBullets());
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -95,7 +98,7 @@ public class Tank {
         isLocLeader = false;
         prevPriorityX = 0;
         prevPriorityY = 0;
-        obstacleList = new HashMap<>();
+        //obstacleList = new HashMap<>();
     }
 
     static void updateRobotNum() {

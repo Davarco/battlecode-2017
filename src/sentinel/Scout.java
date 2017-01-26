@@ -91,6 +91,11 @@ public class Scout {
             // Shake trees to farm bullets
             shakeSurroundingTrees();
 
+            // Implement endgame
+            if (rc.getRoundNum() == rc.getRoundLimit()-1) {
+                rc.donate(rc.getTeamBullets());
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }

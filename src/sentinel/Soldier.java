@@ -1,10 +1,6 @@
 package sentinel;
 
-import battlecode.common.BulletInfo;
-import battlecode.common.Clock;
-import battlecode.common.RobotInfo;
-
-import java.util.HashMap;
+import battlecode.common.*;
 
 import static sentinel.Channels.CHANNEL_SOLDIER_SUM;
 import static sentinel.Combat.defaultRangedAttack;
@@ -13,6 +9,8 @@ import static sentinel.RobotPlayer.*;
 import static sentinel.Util.*;
 
 public class Soldier {
+
+    static Direction currentDirection;
 
     static void run() {
 
@@ -29,7 +27,20 @@ public class Soldier {
                 moveTowardsEnemy(enemyInfo);
                 setPriorityLoc(enemyInfo);
             } else {
-                tryMove(randomDirection());
+
+                // See if robot can still move in current dir
+                if (rc.canMove(currentDirection)) {
+                    rc.move(currentDirection);
+                } else {
+                    MapLocation prevLoc = rc.getLocation();
+                    tryMove(randomDirection(), 5, 36);
+                    MapLocation postLoc = rc.getLocation();
+                    currentDirection = prevLoc.directionTo(postLoc);
+                    if (currentDirection == null) {
+                        int i = (int)(Math.random()*initialArchonLocations.length);
+                        currentDirection = rc.getLocation().directionTo(initialArchonLocations[i]);
+                    }
+                }
             }
 
             // Reset priority loc details
@@ -45,6 +56,11 @@ public class Soldier {
 
             // Shake trees to farm bullets
             shakeSurroundingTrees();
+
+            // Implement endgame
+            if (rc.getRoundNum() == rc.getRoundLimit()-1) {
+                rc.donate(rc.getTeamBullets());
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -80,7 +96,10 @@ public class Soldier {
         isLocLeader = false;
         prevPriorityX = 0;
         prevPriorityY = 0;
-        obstacleList = new HashMap<>();
+
+        initialArchonLocations = rc.getInitialArchonLocations(rc.getTeam().opponent());
+        currentDirection = rc.getLocation().directionTo(initialArchonLocations[0]);
+        //obstacleList = new HashMap<>();
     }
 
     static void updateRobotNum() {

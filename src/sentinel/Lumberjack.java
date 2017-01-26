@@ -1,7 +1,6 @@
 package sentinel;
 
 import battlecode.common.*;
-import java.util.HashMap;
 
 import static sentinel.Channels.CHANNEL_LUMBERJACK_SUM;
 import static sentinel.Combat.defaultMeleeAttack;
@@ -28,12 +27,17 @@ public class Lumberjack {
             TreeInfo[] treeInfo = combineArrayData(rc.senseNearbyTrees(-1, Team.NEUTRAL), rc.senseNearbyTrees(-1, rc.getTeam().opponent()));
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
-            if (bulletCollisionImminent(bulletInfo)) {
+            RobotInfo[] teamInfo = rc.senseNearbyRobots(4.1f, rc.getTeam());
+            if (treeInfo.length > 0) {
+                if (!moveTowardsTree(treeInfo) && teamInfo.length > 0) {
+                    evadeRobotGroup(teamInfo);
+                }
+            } else if (bulletCollisionImminent(bulletInfo)) {
                 dodgeIncomingBullets(bulletInfo);
-            } else if (treeInfo.length > 0) {
-                moveTowardsTree(treeInfo);
             } else if (priorityLocExists()) {
                 moveToPriorityLoc();
+            } else if (teamInfo.length > 0) {
+                evadeRobotGroup(teamInfo);
             } else if (enemyInfo.length > 0) {
                 moveTowardsEnemy(enemyInfo);
                 setPriorityLoc(enemyInfo);
@@ -53,6 +57,11 @@ public class Lumberjack {
 
             // Shake trees to farm bullets
             shakeSurroundingTrees();
+
+            // Implement endgame
+            if (rc.getRoundNum() == rc.getRoundLimit()-1) {
+                rc.donate(rc.getTeamBullets());
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -88,7 +97,7 @@ public class Lumberjack {
         isLocLeader = false;
         prevPriorityX = 0;
         prevPriorityY = 0;
-        obstacleList = new HashMap<>();
+        //obstacleList = new HashMap<>();
     }
 
     static void updateRobotNum() {

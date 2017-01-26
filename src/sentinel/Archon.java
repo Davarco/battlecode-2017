@@ -2,6 +2,8 @@ package sentinel;
 
 import battlecode.common.*;
 
+import static sentinel.Channels.CHANNEL_GARDENER_COUNT;
+import static sentinel.Channels.CHANNEL_GARDENER_SUM;
 import static sentinel.Channels.CHANNEL_TREE_COUNT;
 import static sentinel.Nav.*;
 import static sentinel.RobotPlayer.rc;
@@ -13,7 +15,6 @@ public class Archon {
     static boolean isGardenerBuilt;
     static int numOfGardeners;
     static int numOfArchons;
-    static int numOfTrees;
     static int maxGardeners;
 
     static void run() {
@@ -35,8 +36,7 @@ public class Archon {
             }
 
             // Build gardener
-            numOfTrees = rc.readBroadcast(CHANNEL_TREE_COUNT);
-            if (!isGardenerBuilt || numOfGardeners < maxGardeners) {
+            if (!isGardenerBuilt || numOfGardeners < maxGardeners || rc.getRobotCount() > numOfGardeners*8*numOfArchons || rc.readBroadcast(CHANNEL_GARDENER_COUNT) == 0) {
                 tryBuildGardener();
             }
 
@@ -45,14 +45,13 @@ public class Archon {
                 rc.donate(rc.getTeamBullets());
             }
 
-            // Build gardener
-            if (rc.getRobotCount() > numOfGardeners*8*numOfArchons) {
-                //System.out.println("Trying to build gardener, " + numOfGardeners + " gardeners, " + rc.getRobotCount() + " total.");
-                tryBuildGardener();
-            }
-
             // Shake trees to farm bullets
             shakeSurroundingTrees();
+
+            // Implement endgame
+            if (rc.getRoundNum() == rc.getRoundLimit()-1) {
+                rc.donate(rc.getTeamBullets());
+            }
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -87,7 +86,6 @@ public class Archon {
         // Initialize variables
         isGardenerBuilt = false;
         numOfGardeners = 0;
-        numOfTrees = 0;
         maxGardeners = 1;
         numOfArchons = rc.getInitialArchonLocations(rc.getTeam()).length;
     }

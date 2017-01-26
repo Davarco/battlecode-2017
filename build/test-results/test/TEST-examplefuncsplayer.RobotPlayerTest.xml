@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="examplefuncsplayer.RobotPlayerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-01-25T08:23:42" hostname="Arcann" time="0.001">
+<testsuite name="examplefuncsplayer.RobotPlayerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2017-01-26T01:24:07" hostname="Arcann" time="0.001">
   <properties/>
   <testcase name="testSanity" classname="examplefuncsplayer.RobotPlayerTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>

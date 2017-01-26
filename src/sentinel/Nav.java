@@ -10,7 +10,7 @@ import static sentinel.Util.willCollideWithMe;
 
 public class Nav {
 
-    static void moveTowardsTree(TreeInfo[] treeInfo) {
+    static boolean moveTowardsTree(TreeInfo[] treeInfo) {
 
         try {
 
@@ -19,17 +19,21 @@ public class Nav {
             float minHp = treeInfo[0].getHealth();
             for (int i = 0; i < treeInfo.length; i++) {
                 TreeInfo info = treeInfo[i];
-                if (info.getHealth() < minHp) {
+                if (info.getContainedRobot() != null) {
+                    return tryMove(rc.getLocation().directionTo(info.getLocation()), 5, 3);
+                } else if (info.getHealth() < minHp) {
                     minIdx = i;
                     minHp = info.getHealth();
                 }
             }
 
-            tryMove(rc.getLocation().directionTo(treeInfo[minIdx].getLocation()), 5, 3);
+            return tryMove(rc.getLocation().directionTo(treeInfo[minIdx].getLocation()), 5, 3);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        return false;
     }
 
     static void moveToPriorityLoc() {
