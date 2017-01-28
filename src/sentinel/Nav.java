@@ -2,8 +2,7 @@ package sentinel;
 
 import battlecode.common.*;
 
-import static sentinel.Channels.PRIORITY_X;
-import static sentinel.Channels.PRIORITY_Y;
+import static sentinel.Channels.*;
 import static sentinel.RobotPlayer.obstacleList;
 import static sentinel.RobotPlayer.rc;
 import static sentinel.Util.willCollideWithMe;
@@ -46,6 +45,22 @@ public class Nav {
             moveTowardsLocation(new MapLocation(x, y));
             //System.out.println("Moving towards priority location.");
             rc.setIndicatorLine(rc.getLocation(), new MapLocation(x, y), 80, 220, 120);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void moveToAltPriorityLoc() {
+
+        try {
+
+            // Move to location broadcasted
+            float x = rc.readBroadcastFloat(ALT_PRIORITY_X);
+            float y = rc.readBroadcastFloat(ALT_PRIORITY_Y);
+            moveTowardsLocation(new MapLocation(x, y));
+            //System.out.println("Moving towards priority location.");
+            rc.setIndicatorLine(rc.getLocation(), new MapLocation(x, y), 102, 0, 102);
 
         } catch (Exception e) {
             e.printStackTrace();

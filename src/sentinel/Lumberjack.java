@@ -16,6 +16,11 @@ public class Lumberjack {
 
         try {
 
+            // Reset alternate every 20 turns
+            if (rc.getRoundNum() % 20 == 0) {
+                resetAltPriorityLoc();
+            }
+
             // Add obstacles
             /*
             TreeInfo[] treeInfo = rc.senseNearbyTrees();
@@ -37,6 +42,8 @@ public class Lumberjack {
                 dodgeIncomingBullets(bulletInfo);
             } else if (priorityLocExists()) {
                 moveToPriorityLoc();
+            } else if (altPriorityLocExists()) {
+                moveToAltPriorityLoc();
             } else if (teamInfo.length > 0) {
                 evadeRobotGroup(teamInfo);
             } else if (enemyInfo.length > 0) {

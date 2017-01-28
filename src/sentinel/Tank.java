@@ -16,6 +16,11 @@ public class Tank {
 
         try {
 
+            // Reset alternate every 20 turns
+            if (rc.getRoundNum() % 20 == 0) {
+                resetAltPriorityLoc();
+            }
+
             // Add obstacles
             /*
             TreeInfo[] treeInfo = rc.senseNearbyTrees();
@@ -31,6 +36,8 @@ public class Tank {
                 dodgeIncomingBullets(bulletInfo);
             } else if (priorityLocExists()) {
                 moveToPriorityLoc();
+            } else if (altPriorityLocExists()) {
+                moveToAltPriorityLoc();
             } else if (enemyInfo.length > 0) {
                 moveTowardsEnemy(enemyInfo);
                 setPriorityLoc(enemyInfo);

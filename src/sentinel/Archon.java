@@ -7,9 +7,7 @@ import static sentinel.Channels.CHANNEL_GARDENER_COUNT;
 import static sentinel.Nav.*;
 import static sentinel.RobotPlayer.isNearDeath;
 import static sentinel.RobotPlayer.rc;
-import static sentinel.Util.bulletCollisionImminent;
-import static sentinel.Util.nearDeath;
-import static sentinel.Util.shakeSurroundingTrees;
+import static sentinel.Util.*;
 
 public class Archon {
 
@@ -21,6 +19,11 @@ public class Archon {
     static void run() {
 
         try {
+
+            // Reset alternate every 20 turns
+            if (rc.getRoundNum() % 20 == 0) {
+                resetAltPriorityLoc();
+            }
 
             // Archon movement
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
