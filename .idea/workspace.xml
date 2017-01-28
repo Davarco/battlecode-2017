@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f15232b3-87af-498e-a403-d16ef8a70bcf" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/.TODO.txt.swp" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battlecode-player-upload.jar" afterPath="$PROJECT_DIR$/battlecode-player-upload.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-DenseForest.bc17" afterPath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-DenseForest.bc17" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Enclosure.bc17" afterPath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Enclosure.bc17" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-SparseForest.bc17" afterPath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-SparseForest.bc17" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Archon.java" afterPath="$PROJECT_DIR$/src/sentinel/Archon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Gardener.java" afterPath="$PROJECT_DIR$/src/sentinel/Gardener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Lumberjack.java" afterPath="$PROJECT_DIR$/src/sentinel/Lumberjack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Scout.java" afterPath="$PROJECT_DIR$/src/sentinel/Scout.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Nav.java" afterPath="$PROJECT_DIR$/src/sentinel/Nav.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Soldier.java" afterPath="$PROJECT_DIR$/src/sentinel/Soldier.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Tank.java" afterPath="$PROJECT_DIR$/src/sentinel/Tank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Util.java" afterPath="$PROJECT_DIR$/src/sentinel/Util.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -58,16 +49,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Channels.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sentinel/Channels.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Combat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sentinel/Combat.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -93,8 +74,18 @@
       <file leaf-file-name="Lumberjack.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sentinel/Lumberjack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="684">
+              <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Nav.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sentinel/Nav.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="711">
+              <caret line="62" column="84" lean-forward="false" selection-start-line="62" selection-start-column="84" selection-end-line="62" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -113,8 +104,8 @@
       <file leaf-file-name="Scout.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sentinel/Scout.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+            <state relative-caret-position="36">
+              <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -123,8 +114,8 @@
       <file leaf-file-name="Soldier.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sentinel/Soldier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="414">
+              <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -133,8 +124,8 @@
       <file leaf-file-name="Tank.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sentinel/Tank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+            <state relative-caret-position="522">
+              <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -143,8 +134,8 @@
       <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sentinel/Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="176" column="5" lean-forward="false" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
+            <state relative-caret-position="315">
+              <caret line="181" column="32" lean-forward="true" selection-start-line="181" selection-start-column="32" selection-end-line="181" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -585,14 +576,14 @@
         <option value="$PROJECT_DIR$/src/lightsaber/Nav.java" />
         <option value="$PROJECT_DIR$/src/Sentinel/Nav.java" />
         <option value="$PROJECT_DIR$/src/artemis/Archon.java" />
-        <option value="$PROJECT_DIR$/src/sentinel/Nav.java" />
         <option value="$PROJECT_DIR$/src/sentinel/RobotPlayer.java" />
         <option value="$PROJECT_DIR$/src/sentinel/Channels.java" />
         <option value="$PROJECT_DIR$/src/sentinel/Util.java" />
         <option value="$PROJECT_DIR$/src/sentinel/Gardener.java" />
         <option value="$PROJECT_DIR$/src/sentinel/Archon.java" />
-        <option value="$PROJECT_DIR$/src/sentinel/Lumberjack.java" />
         <option value="$PROJECT_DIR$/src/sentinel/Scout.java" />
+        <option value="$PROJECT_DIR$/src/sentinel/Nav.java" />
+        <option value="$PROJECT_DIR$/src/sentinel/Lumberjack.java" />
         <option value="$PROJECT_DIR$/src/sentinel/Soldier.java" />
         <option value="$PROJECT_DIR$/src/sentinel/Tank.java" />
       </list>
@@ -1001,14 +992,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sentinel/Nav.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sentinel/Channels.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1037,8 +1020,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sentinel/Util.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="176" column="5" lean-forward="false" selection-start-line="176" selection-start-column="5" selection-end-line="176" selection-end-column="5" />
+        <state relative-caret-position="315">
+          <caret line="181" column="32" lean-forward="true" selection-start-line="181" selection-start-column="32" selection-end-line="181" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1061,34 +1044,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sentinel/Nav.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="62" column="84" lean-forward="false" selection-start-line="62" selection-start-column="84" selection-end-line="62" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/sentinel/Lumberjack.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="684">
+          <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sentinel/Scout.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        <state relative-caret-position="36">
+          <caret line="46" column="13" lean-forward="true" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sentinel/Soldier.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="414">
+          <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sentinel/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        <state relative-caret-position="522">
+          <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
           <folding />
         </state>
       </provider>

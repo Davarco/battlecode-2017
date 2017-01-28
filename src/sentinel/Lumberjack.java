@@ -42,6 +42,8 @@ public class Lumberjack {
                 dodgeIncomingBullets(bulletInfo);
             } else if (priorityLocExists()) {
                 moveToPriorityLoc();
+            } else if (altPriorityLocExists()) {
+                moveToAltPriorityLoc();
             } else if (teamInfo.length > 0) {
                 evadeRobotGroup(teamInfo);
             } else if (enemyInfo.length > 0) {
