@@ -1,0 +1,8 @@
+I know this is a little late into the competition, but I decided I should keep track of stuff.
+
+TODO:
+- Implement alternate priority with scouts!
+- Lower number of scouts
+- Improve tree and robot creation locations? (Should have been fixed ago)
+- Better tree chopping choices for lumberjacks
+- If possible, have smarter pathing (A*, bug pathing)
