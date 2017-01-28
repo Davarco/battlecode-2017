@@ -14,6 +14,11 @@ public class Soldier {
 
         try {
 
+            // Reset alternate every 20 turns
+            if (rc.getRoundNum() % 20 == 0) {
+                resetAltPriorityLoc();
+            }
+
             // Soldier move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());

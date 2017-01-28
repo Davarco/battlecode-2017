@@ -6,9 +6,7 @@ import static sentinel.Channels.*;
 import static sentinel.Nav.*;
 import static sentinel.RobotPlayer.isNearDeath;
 import static sentinel.RobotPlayer.rc;
-import static sentinel.Util.bulletCollisionImminent;
-import static sentinel.Util.nearDeath;
-import static sentinel.Util.shakeSurroundingTrees;
+import static sentinel.Util.*;
 
 public class Gardener {
 
@@ -29,6 +27,11 @@ public class Gardener {
     static void run() {
 
         try {
+
+            // Reset alternate every 20 turns
+            if (rc.getRoundNum() % 20 == 0) {
+                resetAltPriorityLoc();
+            }
 
             // Gardener movement
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
@@ -56,8 +59,14 @@ public class Gardener {
                 }
             }
 
-            // Make sure the first soldier is built
+            // Make sure the first lumberjack and soldier are built
             if (isTreePlanted) {
+                if (numLumberjacks < 1) {
+                    if (rc.hasRobotBuildRequirements(RobotType.LUMBERJACK)) {
+                        tryToBuildUnit(RobotType.LUMBERJACK);
+                    }
+                }
+
                 if (numSoldiers < 1) {
                     if (rc.hasRobotBuildRequirements(RobotType.SOLDIER)) {
                         tryToBuildUnit(RobotType.SOLDIER);
@@ -92,13 +101,13 @@ public class Gardener {
             int totalSoldiers = rc.readBroadcast(CHANNEL_SOLDIER_COUNT);
             int totalLumberjacks = rc.readBroadcast(CHANNEL_LUMBERJACK_COUNT);
             if (isTreePlanted) {
-                if ((numScouts*6 < totalRobots && totalSoldiers >= 4*totalArchons) || (totalScouts == 0 && rc.getTeamBullets() >= 100)) {
-                    if (rc.hasRobotBuildRequirements(RobotType.SCOUT)) {
-                        tryToBuildUnit(RobotType.SCOUT);
-                    }
-                } else if (numLumberjacks*8 < totalRobots && totalSoldiers >= 4 || (totalLumberjacks == 0 && rc.getTeamBullets() >= 100)) {
+                if (numLumberjacks*9 < totalRobots && totalSoldiers >= 3*totalArchons || (totalLumberjacks == 0 && rc.getTeamBullets() >= 100)) {
                     if (rc.hasRobotBuildRequirements(RobotType.LUMBERJACK)) {
                         tryToBuildUnit(RobotType.LUMBERJACK);
+                    }
+                } else if ((numScouts*9 < totalRobots && totalSoldiers >= 6*totalArchons) || (totalScouts == 0 && rc.getTeamBullets() >= 100)) {
+                    if (rc.hasRobotBuildRequirements(RobotType.SCOUT)) {
+                        tryToBuildUnit(RobotType.SCOUT);
                     }
                 } else {
                     if (rc.hasRobotBuildRequirements(RobotType.SOLDIER)) {

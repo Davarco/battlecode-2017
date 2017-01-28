@@ -15,6 +15,11 @@ public class Scout {
 
         try {
 
+            // Reset alternate every 20 turns
+            if (rc.getRoundNum() % 20 == 0) {
+                resetAltPriorityLoc();
+            }
+
             // Add obstacles
             /*
             TreeInfo[] treeInfo = rc.senseNearbyTrees();
@@ -61,8 +66,10 @@ public class Scout {
                         int i = (int)(Math.random()*initialArchonLocations.length);
                         currentDirection = rc.getLocation().directionTo(initialArchonLocations[i]);
                     }
+                    setAltPriorityLoc(enemyInfo);
                 } else {
                     moveTowardsEnemy(enemyInfo);
+                    setAltPriorityLoc(enemyInfo);
                 }
             } else {
 

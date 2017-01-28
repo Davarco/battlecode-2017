@@ -154,6 +154,53 @@ public class Util {
         return false;
     }
 
+    static void resetAltPriorityLoc() {
+        try {
+
+            // Set to 0 so it is ignored
+            rc.broadcastFloat(ALT_PRIORITY_X, 0);
+            rc.broadcastFloat(ALT_PRIORITY_Y, 0);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void setAltPriorityLoc(RobotInfo[] robotInfo) {
+
+        try {
+
+            // Broadcast robot info
+            float x = robotInfo[0].getLocation().x+0.1f;
+            float y = robotInfo[0].getLocation().y+0.1f;
+            rc.broadcastFloat(ALT_PRIORITY_X, x);
+            rc.broadcastFloat(ALT_PRIORITY_Y, y);
+            rc.setIndicatorDot(new MapLocation(x, y), 255, 180, 190);
+            System.out.println("Setting alternate priority location.");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    static boolean altPriorityLocExists() {
+
+        try {
+
+            // See if they are 0 or not
+            //System.out.println(rc.readBroadcastFloat(PRIORITY_X) + " " + rc.readBroadcastFloat(PRIORITY_Y));
+            if (rc.readBroadcastFloat(ALT_PRIORITY_X) != 0 && rc.readBroadcastFloat(ALT_PRIORITY_Y) != 0) {
+                return true;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
     static boolean bulletCollisionImminent(BulletInfo[] bulletInfo) {
 
         // See if there is a bullet that will collide with robot
