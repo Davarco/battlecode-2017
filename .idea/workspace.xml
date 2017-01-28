@@ -2,10 +2,28 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f15232b3-87af-498e-a403-d16ef8a70bcf" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Lumberjack.java" afterPath="$PROJECT_DIR$/src/sentinel/Lumberjack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Nav.java" afterPath="$PROJECT_DIR$/src/sentinel/Nav.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Soldier.java" afterPath="$PROJECT_DIR$/src/sentinel/Soldier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Tank.java" afterPath="$PROJECT_DIR$/src/sentinel/Tank.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battlecode-player-upload.jar" afterPath="$PROJECT_DIR$/battlecode-player-upload.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Archon.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Archon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Gardener.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Gardener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Lumberjack.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Lumberjack.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Nav.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Nav.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Scout.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Scout.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Soldier.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Soldier.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Tank.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Tank.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Util.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Util.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/bc.jar" afterPath="$PROJECT_DIR$/build/libs/bc.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Enclosure.bc17" afterPath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Enclosure.bc17" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/examplefuncsplayer.RobotPlayerTest.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/examplefuncsplayer.RobotPlayerTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/examplefuncsplayer.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/examplefuncsplayer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/TEST-examplefuncsplayer.RobotPlayerTest.xml" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-examplefuncsplayer.RobotPlayerTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -61,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gardener.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Gardener.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/sentinel/Gardener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+            <state relative-caret-position="711">
+              <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -121,11 +139,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Tank.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Tank.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sentinel/Tank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+            <state relative-caret-position="306">
+              <caret line="25" column="56" lean-forward="true" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -1036,14 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sentinel/Gardener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sentinel/Nav.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="711">
@@ -1078,8 +1088,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sentinel/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="37" column="23" lean-forward="false" selection-start-line="37" selection-start-column="23" selection-end-line="37" selection-end-column="23" />
+        <state relative-caret-position="306">
+          <caret line="25" column="56" lean-forward="true" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sentinel/Gardener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="711">
+          <caret line="95" column="0" lean-forward="true" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
           <folding />
         </state>
       </provider>
