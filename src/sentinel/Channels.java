@@ -11,6 +11,10 @@ public class Channels {
     static final int CHANNEL_SCOUT_COUNT = 4;
     static final int CHANNEL_LUMBERJACK_COUNT = 5;
 
+    // Make sure gardeners build linearly
+    static final int CHANNEL_GARDENER_STATUS = 6;
+    static final int CHANNEL_GARDENER_COUNTDOWN = 7;
+
     // Strategic positioning
     static final int ALT_PRIORITY_X = 996;
     static final int ALT_PRIORITY_Y = 997;

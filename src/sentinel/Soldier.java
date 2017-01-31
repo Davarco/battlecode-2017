@@ -14,8 +14,8 @@ public class Soldier {
 
         try {
 
-            // Reset alternate every 20 turns
-            if (rc.getRoundNum() % 20 == 0) {
+            // Reset alternate every 6 turns
+            if (rc.getRoundNum() % 6 == 0) {
                 resetAltPriorityLoc();
             }
 
@@ -34,17 +34,19 @@ public class Soldier {
             } else {
 
                 // See if robot can still move in current dir
-                if (rc.canMove(currentDirection)) {
+                if (rc.canMove(currentDirection) && numTries <= 36) {
                     rc.move(currentDirection);
+                    numTries += 1;
                 } else {
                     MapLocation prevLoc = rc.getLocation();
                     tryMove(randomDirection(), 5, 36);
                     MapLocation postLoc = rc.getLocation();
                     currentDirection = prevLoc.directionTo(postLoc);
                     if (currentDirection == null) {
-                        int i = (int)(Math.random()*initialArchonLocations.length);
+                        int i = (int) (Math.random() * initialArchonLocations.length);
                         currentDirection = rc.getLocation().directionTo(initialArchonLocations[i]);
                     }
+                    numTries = 0;
                 }
             }
 
@@ -107,8 +109,10 @@ public class Soldier {
         isLocLeader = false;
         prevPriorityX = 0;
         prevPriorityY = 0;
+
         initialArchonLocations = rc.getInitialArchonLocations(rc.getTeam().opponent());
         currentDirection = rc.getLocation().directionTo(initialArchonLocations[0]);
+        numTries = 0;
         //obstacleList = new HashMap<>();
 
         // Increase robot type count

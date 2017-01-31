@@ -7,6 +7,75 @@ import static sentinel.RobotPlayer.*;
 
 public class Util {
 
+    static MapLocation treesHaveBullets(TreeInfo[] treeInfo) {
+        for (TreeInfo info: treeInfo) {
+            if (info.getContainedBullets() > 0) {
+                return info.getLocation();
+            }
+        }
+
+        return null;
+    }
+
+    static int getGardenerCountdown() {
+        try {
+            return rc.readBroadcast(CHANNEL_GARDENER_COUNTDOWN);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return 50;
+    }
+
+    static void decreaseGardenerCountdown() {
+        try {
+            rc.broadcast(CHANNEL_GARDENER_COUNTDOWN, rc.readBroadcast(CHANNEL_GARDENER_COUNTDOWN)-1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void setGardenerCountdown(int i) {
+        try {
+            rc.broadcast(CHANNEL_GARDENER_COUNTDOWN, i);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static boolean isBuildingGardener() {
+        try {
+            return (rc.readBroadcastBoolean(CHANNEL_GARDENER_STATUS));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return true;
+    }
+
+    static void setBuildingGardener(boolean b) {
+        try {
+            rc.broadcastBoolean(CHANNEL_GARDENER_STATUS, b);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static boolean isNotOccupiedNearby(float radians) {
+        try {
+            return rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, rc.getTeam().opponent()).length == 0 &&
+                    rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, rc.getTeam()).length == 0 &&
+                    rc.senseNearbyTrees(rc.getLocation().add(radians, 2.0f), 1.0f, Team.NEUTRAL).length == 0 &&
+                    rc.senseNearbyRobots(rc.getLocation().add(radians, 2.0f), 1.0f, rc.getTeam()).length == 0 &&
+                    rc.onTheMap(rc.getLocation().add(radians, 2.0f), 1.0f);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Failed to check occupied nearby.");
+        return true;
+    }
+
     static void shakeSurroundingTrees() {
 
         try {
@@ -176,7 +245,7 @@ public class Util {
             rc.broadcastFloat(ALT_PRIORITY_X, x);
             rc.broadcastFloat(ALT_PRIORITY_Y, y);
             rc.setIndicatorDot(new MapLocation(x, y), 255, 180, 190);
-            System.out.println("Setting alternate priority location.");
+            //System.out.println("Setting alternate priority location.");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -229,6 +298,29 @@ public class Util {
         // Set is 1/8
         return (rc.getHealth()*8 < rc.getType().maxHealth);
     }
+
+    static boolean willCollideWithObject(MapLocation startLoc, Direction moveDir, MapLocation targetLoc, float width) {
+        MapLocation myLocation = targetLoc;
+
+        // Get relevant bullet information
+        Direction propagationDirection = moveDir;
+        MapLocation bulletLocation = startLoc;
+
+        // Calculate bullet relations to this robot
+        Direction directionToRobot = bulletLocation.directionTo(myLocation);
+        float distToRobot = bulletLocation.distanceTo(myLocation);
+        float theta = propagationDirection.radiansBetween(directionToRobot);
+
+        // If theta > 90 degrees, then the bullet is traveling away from us and we can break early
+        if (Math.abs(theta) > Math.PI/2) {
+            return false;
+        }
+
+        float perpendicularDist = (float)Math.abs(distToRobot * Math.sin(theta));
+
+        return (perpendicularDist <= width);
+    }
+
 
     static boolean willCollideWithLocation(MapLocation startLoc, Direction moveDir, MapLocation targetLoc) {
         MapLocation myLocation = targetLoc;

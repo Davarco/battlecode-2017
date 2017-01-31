@@ -1,0 +1,21 @@
+So, I just challenged some of the top teams. Pretty good confidence booster, doing well atm.
+
+However, they exploited some pretty glaring weaknesses. These need to be implemented ASAP if I am to advance.
+
+- Prone to yolo rushes...
+    - Gardener picks to build robot in bad direction
+    - Robot:Tree ratio is too high in the beginning
+
+- Gardeners pick a bad spot to build a lot of the time
+    - Maybe try bounce code for better area searching?
+
+- Gardeners get killed early on
+    - Implement SOS code?
+    - Robots run away too early, need to use more stationary movement?
+
+- Robots are suicidal
+    - Probably add some outmatched function, don't attack groups of robots by self
+
+I have to say, this has been a really fun time. I know later I might be disappointed, but hopefully I will remember this moment.
+
+~ David "Davarco" Zhang

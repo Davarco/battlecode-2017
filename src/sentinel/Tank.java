@@ -16,8 +16,8 @@ public class Tank {
 
         try {
 
-            // Reset alternate every 20 turns
-            if (rc.getRoundNum() % 20 == 0) {
+            // Reset alternate every 6 turns
+            if (rc.getRoundNum() % 6 == 0) {
                 resetAltPriorityLoc();
             }
 

@@ -15,8 +15,8 @@ public class Scout {
 
         try {
 
-            // Reset alternate every 20 turns
-            if (rc.getRoundNum() % 20 == 0) {
+            // Reset alternate every 6 turns
+            if (rc.getRoundNum() % 6 == 0) {
                 resetAltPriorityLoc();
             }
 
@@ -52,6 +52,8 @@ public class Scout {
             // Scout move
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
             RobotInfo[] enemyInfo = rc.senseNearbyRobots(-1, rc.getTeam().opponent());
+            TreeInfo[] treeInfo = rc.senseNearbyTrees();
+            MapLocation treeLoc = treesHaveBullets(treeInfo);
             if (bulletCollisionImminent(bulletInfo)) {
                 dodgeIncomingBullets(bulletInfo);
             } else if (enemyInfo.length > 0) {
@@ -71,11 +73,14 @@ public class Scout {
                     moveTowardsEnemy(enemyInfo);
                     setAltPriorityLoc(enemyInfo);
                 }
+            } else if (treeLoc != null) {
+                moveTowardsLocation(treeLoc);
             } else {
 
                 // See if robot can still move in current dir
                 if (rc.canMove(currentDirection)) {
                     rc.move(currentDirection);
+                    numTries += 1;
                 } else {
                     MapLocation prevLoc = rc.getLocation();
                     tryMove(randomDirection(), 5, 36);
@@ -85,13 +90,16 @@ public class Scout {
                         int i = (int)(Math.random()*initialArchonLocations.length);
                         currentDirection = rc.getLocation().directionTo(initialArchonLocations[i]);
                     }
+                    numTries = 0;
                 }
             }
 
             // Default ranged attack
+            /*
             if (enemyInfo.length > 0) {
                 defaultRangedAttack(enemyInfo);
             }
+            */
 
             // Shake trees to farm bullets
             shakeSurroundingTrees();
@@ -144,6 +152,7 @@ public class Scout {
         prevPriorityY = 0;
         initialArchonLocations = rc.getInitialArchonLocations(rc.getTeam().opponent());
         currentDirection = rc.getLocation().directionTo(initialArchonLocations[0]);
+        numTries = 0;
 
         // Increase robot type count
         try {

@@ -3,7 +3,7 @@ package sentinel;
 import battlecode.common.*;
 
 import static sentinel.Channels.*;
-import static sentinel.RobotPlayer.obstacleList;
+//import static sentinel.RobotPlayer.obstacleList;
 import static sentinel.RobotPlayer.rc;
 import static sentinel.Util.willCollideWithMe;
 
@@ -19,14 +19,14 @@ public class Nav {
             for (int i = 0; i < treeInfo.length; i++) {
                 TreeInfo info = treeInfo[i];
                 if (info.getContainedRobot() != null) {
-                    return tryMove(rc.getLocation().directionTo(info.getLocation()), 5, 3);
+                    return tryMove(rc.getLocation().directionTo(info.getLocation()), 5, 36);
                 } else if (info.getHealth() < minHp) {
                     minIdx = i;
                     minHp = info.getHealth();
                 }
             }
 
-            return tryMove(rc.getLocation().directionTo(treeInfo[minIdx].getLocation()), 5, 3);
+            return tryMove(rc.getLocation().directionTo(treeInfo[minIdx].getLocation()), 5, 36);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -220,6 +220,8 @@ public class Nav {
         return tryMove(dir,20,3);
     }
 
+    /*
+
     static void addObstacles(RobotInfo[] robotInfo) {
 
         // Add robots as obstacles
@@ -235,4 +237,6 @@ public class Nav {
             obstacleList.put(info.getLocation(), info.getRadius());
         }
     }
+
+    */
 }

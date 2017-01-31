@@ -14,13 +14,14 @@ public strictfp class RobotPlayer {
 
     // For coordinated attacking
     static Direction currentDirection;
+    static int numTries;
     static boolean isLocLeader;
     static boolean isNearDeath;
     static float prevPriorityX;
     static float prevPriorityY;
 
     // For smart pathing
-    static Map<MapLocation, Float> obstacleList;
+    //static Map<MapLocation, Float> obstacleList;
 
     // For scouting
     static MapLocation[] initialArchonLocations;

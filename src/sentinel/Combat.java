@@ -4,8 +4,7 @@ import battlecode.common.*;
 import static sentinel.Channels.PRIORITY_X;
 import static sentinel.Channels.PRIORITY_Y;
 import static sentinel.RobotPlayer.rc;
-import static sentinel.Util.willCollideWithLocation;
-import static sentinel.Util.willCollideWithMe;
+import static sentinel.Util.*;
 
 public class Combat {
 
@@ -72,20 +71,50 @@ public class Combat {
         }
     }
 
+    static MapLocation getPrefEnemyLoc(RobotInfo[] robotInfo) {
+
+        try {
+
+            float minHp = 100;
+            RobotInfo bestTarget = null;
+            TreeInfo[] treeInfo = combineArrayData(rc.senseNearbyTrees(-1, rc.getTeam()), rc.senseNearbyTrees(-1, Team.NEUTRAL));
+            for (RobotInfo info: robotInfo) {
+                Direction dir = rc.getLocation().directionTo(info.getLocation());
+                if (willNotCollideWithTrees(dir, treeInfo)) {
+                    if (info.getHealth()/info.getType().getStartingHealth() < minHp) {
+                        minHp = info.getHealth()/info.getType().getStartingHealth();
+                        bestTarget = info;
+                    }
+                }
+            }
+
+            if (bestTarget != null) {
+                return bestTarget.getLocation();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     static void defaultRangedAttack(RobotInfo[] robotInfo) {
 
         try {
 
             // Attack closest enemy and determine spread by distance
-            MapLocation prefEnemyLoc = robotInfo[0].getLocation();
-            Direction prefAttackDir = rc.getLocation().directionTo(prefEnemyLoc);
-            float prefAttackDist = rc.getLocation().distanceTo(prefEnemyLoc);
-            if (prefAttackDist < 4.0 && rc.canFirePentadShot() && pentadWillNotCollide(prefAttackDir)) {
-                rc.firePentadShot(prefAttackDir);
-            } else if (prefAttackDist < 6.0 && rc.canFireTriadShot() && triadWillNotCollide(prefAttackDir)) {
-                rc.fireTriadShot(prefAttackDir);
-            } else if (rc.canFireSingleShot() && singleWillNotCollide(prefAttackDir)) {
-                rc.fireSingleShot(prefAttackDir);
+            MapLocation prefEnemyLoc = getPrefEnemyLoc(robotInfo);
+            if (prefEnemyLoc != null) {
+                Direction prefAttackDir = rc.getLocation().directionTo(prefEnemyLoc);
+                float prefAttackDist = rc.getLocation().distanceTo(prefEnemyLoc);
+                if (rc.canFirePentadShot() && pentadWillNotCollide(prefAttackDir)) {
+                    rc.firePentadShot(prefAttackDir);
+                } else if (rc.canFireTriadShot() && triadWillNotCollide(prefAttackDir)) {
+                    rc.fireTriadShot(prefAttackDir);
+                } else if (rc.canFireSingleShot() && singleWillNotCollide(prefAttackDir)) {
+                    rc.fireSingleShot(prefAttackDir);
+                }
             }
 
         } catch (Exception e) {
@@ -107,6 +136,16 @@ public class Combat {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    static boolean willNotCollideWithTrees(Direction dir, TreeInfo[] treeInfo) {
+        for (TreeInfo info: treeInfo) {
+            if (willCollideWithObject(rc.getLocation(), dir, info.getLocation(), info.getRadius())) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     static boolean pentadWillNotCollide(Direction dir) {

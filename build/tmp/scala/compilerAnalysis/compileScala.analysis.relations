@@ -1,4 +1,16 @@
 products:
+   src/Exceptional/Archon.java -> build/classes/Exceptional/Archon.class
+   src/Exceptional/Channels.java -> build/classes/Exceptional/Channels.class
+   src/Exceptional/Combat.java -> build/classes/Exceptional/Combat.class
+   src/Exceptional/Gardener.java -> build/classes/Exceptional/Gardener.class
+   src/Exceptional/Lumberjack.java -> build/classes/Exceptional/Lumberjack.class
+   src/Exceptional/Nav.java -> build/classes/Exceptional/Nav.class
+   src/Exceptional/RobotPlayer.java -> build/classes/Exceptional/RobotPlayer$1.class
+   src/Exceptional/RobotPlayer.java -> build/classes/Exceptional/RobotPlayer.class
+   src/Exceptional/Scout.java -> build/classes/Exceptional/Scout.class
+   src/Exceptional/Soldier.java -> build/classes/Exceptional/Soldier.class
+   src/Exceptional/Tank.java -> build/classes/Exceptional/Tank.class
+   src/Exceptional/Util.java -> build/classes/Exceptional/Util.class
    src/artemis/Combat.java -> build/classes/artemis/Combat.class
    src/sentinel/Archon.java -> build/classes/sentinel/Archon.class
    src/sentinel/Channels.java -> build/classes/sentinel/Channels.class
@@ -13,31 +25,104 @@ products:
    src/sentinel/Tank.java -> build/classes/sentinel/Tank.class
    src/sentinel/Util.java -> build/classes/sentinel/Util.class
 binary dependencies:
-   src/artemis/Combat.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/Exceptional/Archon.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
+   src/Exceptional/Archon.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+   src/Exceptional/Channels.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+   src/Exceptional/Combat.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
+   src/Exceptional/Combat.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+   src/Exceptional/Gardener.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
+   src/Exceptional/Gardener.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+   src/Exceptional/Lumberjack.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
+   src/Exceptional/Lumberjack.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+   src/Exceptional/Nav.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
+   src/Exceptional/Nav.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+   src/Exceptional/RobotPlayer.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
+   src/Exceptional/RobotPlayer.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+   src/Exceptional/Scout.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
+   src/Exceptional/Scout.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+   src/Exceptional/Soldier.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
+   src/Exceptional/Soldier.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+   src/Exceptional/Tank.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
+   src/Exceptional/Tank.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+   src/Exceptional/Util.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
+   src/Exceptional/Util.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
+   src/artemis/Combat.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
    src/artemis/Combat.java -> build/classes/artemis/RobotPlayer.class
    src/artemis/Combat.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/sentinel/Archon.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/sentinel/Archon.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
    src/sentinel/Archon.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
    src/sentinel/Channels.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/sentinel/Combat.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/sentinel/Combat.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
    src/sentinel/Combat.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/sentinel/Gardener.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/sentinel/Gardener.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
    src/sentinel/Gardener.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/sentinel/Lumberjack.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/sentinel/Lumberjack.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
    src/sentinel/Lumberjack.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/sentinel/Nav.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/sentinel/Nav.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
    src/sentinel/Nav.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/sentinel/RobotPlayer.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/sentinel/RobotPlayer.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
    src/sentinel/RobotPlayer.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/sentinel/Scout.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/sentinel/Scout.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
    src/sentinel/Scout.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/sentinel/Soldier.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/sentinel/Soldier.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
    src/sentinel/Soldier.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/sentinel/Tank.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/sentinel/Tank.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
    src/sentinel/Tank.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
-   src/sentinel/Util.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.5.0/e81074928229a313841d4d08cc9134d4af6ea319/battlecode-2017.1.5.0.jar
+   src/sentinel/Util.java -> /home/davidzhang/.gradle/caches/modules-2/files-2.1/org.battlecode/battlecode/2017.1.6.2/fa8bb604971ea93a6da867f925e4333674959b8e/battlecode-2017.1.6.2.jar
    src/sentinel/Util.java -> /usr/lib/jvm/java-8-openjdk/jre/lib/rt.jar
 source dependencies:
+   src/Exceptional/Archon.java -> src/Exceptional/Archon.java
+   src/Exceptional/Archon.java -> src/Exceptional/Channels.java
+   src/Exceptional/Archon.java -> src/Exceptional/Nav.java
+   src/Exceptional/Archon.java -> src/Exceptional/RobotPlayer.java
+   src/Exceptional/Archon.java -> src/Exceptional/Util.java
+   src/Exceptional/Channels.java -> src/Exceptional/Channels.java
+   src/Exceptional/Combat.java -> src/Exceptional/Channels.java
+   src/Exceptional/Combat.java -> src/Exceptional/Combat.java
+   src/Exceptional/Combat.java -> src/Exceptional/RobotPlayer.java
+   src/Exceptional/Combat.java -> src/Exceptional/Util.java
+   src/Exceptional/Gardener.java -> src/Exceptional/Channels.java
+   src/Exceptional/Gardener.java -> src/Exceptional/Gardener.java
+   src/Exceptional/Gardener.java -> src/Exceptional/Nav.java
+   src/Exceptional/Gardener.java -> src/Exceptional/RobotPlayer.java
+   src/Exceptional/Gardener.java -> src/Exceptional/Util.java
+   src/Exceptional/Lumberjack.java -> src/Exceptional/Channels.java
+   src/Exceptional/Lumberjack.java -> src/Exceptional/Combat.java
+   src/Exceptional/Lumberjack.java -> src/Exceptional/Lumberjack.java
+   src/Exceptional/Lumberjack.java -> src/Exceptional/Nav.java
+   src/Exceptional/Lumberjack.java -> src/Exceptional/RobotPlayer.java
+   src/Exceptional/Lumberjack.java -> src/Exceptional/Util.java
+   src/Exceptional/Nav.java -> src/Exceptional/Channels.java
+   src/Exceptional/Nav.java -> src/Exceptional/Nav.java
+   src/Exceptional/Nav.java -> src/Exceptional/RobotPlayer.java
+   src/Exceptional/Nav.java -> src/Exceptional/Util.java
+   src/Exceptional/RobotPlayer.java -> src/Exceptional/Archon.java
+   src/Exceptional/RobotPlayer.java -> src/Exceptional/Gardener.java
+   src/Exceptional/RobotPlayer.java -> src/Exceptional/Lumberjack.java
+   src/Exceptional/RobotPlayer.java -> src/Exceptional/RobotPlayer.java
+   src/Exceptional/RobotPlayer.java -> src/Exceptional/Scout.java
+   src/Exceptional/RobotPlayer.java -> src/Exceptional/Soldier.java
+   src/Exceptional/RobotPlayer.java -> src/Exceptional/Tank.java
+   src/Exceptional/Scout.java -> src/Exceptional/Channels.java
+   src/Exceptional/Scout.java -> src/Exceptional/Nav.java
+   src/Exceptional/Scout.java -> src/Exceptional/RobotPlayer.java
+   src/Exceptional/Scout.java -> src/Exceptional/Scout.java
+   src/Exceptional/Scout.java -> src/Exceptional/Util.java
+   src/Exceptional/Soldier.java -> src/Exceptional/Channels.java
+   src/Exceptional/Soldier.java -> src/Exceptional/Combat.java
+   src/Exceptional/Soldier.java -> src/Exceptional/Nav.java
+   src/Exceptional/Soldier.java -> src/Exceptional/RobotPlayer.java
+   src/Exceptional/Soldier.java -> src/Exceptional/Soldier.java
+   src/Exceptional/Soldier.java -> src/Exceptional/Util.java
+   src/Exceptional/Tank.java -> src/Exceptional/Channels.java
+   src/Exceptional/Tank.java -> src/Exceptional/Combat.java
+   src/Exceptional/Tank.java -> src/Exceptional/Nav.java
+   src/Exceptional/Tank.java -> src/Exceptional/RobotPlayer.java
+   src/Exceptional/Tank.java -> src/Exceptional/Tank.java
+   src/Exceptional/Tank.java -> src/Exceptional/Util.java
+   src/Exceptional/Util.java -> src/Exceptional/Channels.java
+   src/Exceptional/Util.java -> src/Exceptional/RobotPlayer.java
+   src/Exceptional/Util.java -> src/Exceptional/Util.java
    src/artemis/Combat.java -> src/artemis/Combat.java
    src/sentinel/Archon.java -> src/sentinel/Archon.java
    src/sentinel/Archon.java -> src/sentinel/Channels.java
@@ -72,7 +157,6 @@ source dependencies:
    src/sentinel/RobotPlayer.java -> src/sentinel/Soldier.java
    src/sentinel/RobotPlayer.java -> src/sentinel/Tank.java
    src/sentinel/Scout.java -> src/sentinel/Channels.java
-   src/sentinel/Scout.java -> src/sentinel/Combat.java
    src/sentinel/Scout.java -> src/sentinel/Nav.java
    src/sentinel/Scout.java -> src/sentinel/RobotPlayer.java
    src/sentinel/Scout.java -> src/sentinel/Scout.java
@@ -94,6 +178,18 @@ source dependencies:
    src/sentinel/Util.java -> src/sentinel/Util.java
 external dependencies:
 class names:
+   src/Exceptional/Archon.java -> Exceptional.Archon
+   src/Exceptional/Channels.java -> Exceptional.Channels
+   src/Exceptional/Combat.java -> Exceptional.Combat
+   src/Exceptional/Gardener.java -> Exceptional.Gardener
+   src/Exceptional/Lumberjack.java -> Exceptional.Lumberjack
+   src/Exceptional/Nav.java -> Exceptional.Nav
+   src/Exceptional/RobotPlayer.java -> Exceptional.RobotPlayer
+   src/Exceptional/RobotPlayer.java -> Exceptional.RobotPlayer$1
+   src/Exceptional/Scout.java -> Exceptional.Scout
+   src/Exceptional/Soldier.java -> Exceptional.Soldier
+   src/Exceptional/Tank.java -> Exceptional.Tank
+   src/Exceptional/Util.java -> Exceptional.Util
    src/artemis/Combat.java -> artemis.Combat
    src/sentinel/Archon.java -> sentinel.Archon
    src/sentinel/Channels.java -> sentinel.Channels
