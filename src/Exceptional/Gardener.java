@@ -39,6 +39,24 @@ public class Gardener {
             RobotInfo[] teamInfo = rc.senseNearbyRobots(GARDENER_SPACE_RADIUS, rc.getTeam());
             BulletInfo[] bulletInfo = rc.senseNearbyBullets();
 
+            // Get best robot build direction
+            getBestBuildDirection();
+
+            // This really just refers to the map cramped
+            if (rc.senseNearbyRobots(-1, rc.getTeam().opponent()).length > 0 && numSoldiers == 0) {
+                if (buildRobotDir != null && rc.canBuildRobot(RobotType.SOLDIER, buildRobotDir)) {
+                    rc.buildRobot(RobotType.SOLDIER, buildRobotDir);
+                }
+            }
+
+            // Build lumberjacks first if there is a cluster of trees
+            if (rc.senseNearbyTrees(-1, Team.NEUTRAL).length > 6 && numLumberjacks < 3) {
+                if (buildRobotDir != null && rc.canBuildRobot(RobotType.LUMBERJACK, buildRobotDir)) {
+                    rc.buildRobot(RobotType.LUMBERJACK, buildRobotDir);
+                }
+            }
+
+            // Gardener logic
             if (!isTreePlanted) {
                 if (!enoughSpaceToBuild()) {
                     if (enemyInfo.length > 0) {
@@ -59,9 +77,6 @@ public class Gardener {
                     setAltPriorityLoc(enemyInfo);
                 }
             }
-
-            // Get best robot build direction
-            getBestBuildDirection();
 
             // Build, water, and update trees
             TreeInfo[] treeInfo = rc.senseNearbyTrees(-1, rc.getTeam());
@@ -173,7 +188,7 @@ public class Gardener {
         totalRobots = 0;
         tries = 0;
         initialArchonLocations = rc.getInitialArchonLocations(rc.getTeam().opponent());
-        currentDirection = rc.getLocation().directionTo(initialArchonLocations[0]);
+        currentDirection = rc.getLocation().directionTo(closestRobotLoc(initialArchonLocations)).opposite();
         numTries = 0;
         totalTries = 0;
 
@@ -191,7 +206,7 @@ public class Gardener {
 
             final float radianInterval = (float)(Math.PI/3);
             float minDiff = (float)(Math.PI*2);
-            Direction idealDir = rc.getLocation().directionTo(rc.getInitialArchonLocations(rc.getTeam().opponent())[0]);
+            Direction idealDir = rc.getLocation().directionTo(closestRobotLoc(initialArchonLocations));
 
             // Check around robot
             float radians = 0;

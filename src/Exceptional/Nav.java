@@ -45,7 +45,7 @@ public class Nav {
             float y = rc.readBroadcastFloat(PRIORITY_Y);
             moveTowardsLocation(new MapLocation(x, y));
             //System.out.println("Moving towards priority location.");
-            rc.setIndicatorLine(rc.getLocation(), new MapLocation(x, y), 80, 220, 120);
+            //rc.setIndicatorLine(rc.getLocation(), new MapLocation(x, y), 80, 220, 120);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,7 +61,7 @@ public class Nav {
             float y = rc.readBroadcastFloat(ALT_PRIORITY_Y);
             moveTowardsLocation(new MapLocation(x, y));
             //System.out.println("Moving towards priority location.");
-            rc.setIndicatorLine(rc.getLocation(), new MapLocation(x, y), 102, 0, 102);
+            //rc.setIndicatorLine(rc.getLocation(), new MapLocation(x, y), 102, 0, 102);
 
         } catch (Exception e) {
             e.printStackTrace();

@@ -2,41 +2,78 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f15232b3-87af-498e-a403-d16ef8a70bcf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptional/Archon.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptional/Channels.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptional/Combat.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptional/Gardener.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptional/Lumberjack.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptional/Nav.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptional/RobotPlayer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptional/Scout.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptional/Soldier.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptional/Tank.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Exceptional/Util.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs/.TODO_2.txt.swp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/Arcoplayer-vs-examplefuncsplayer-on-Barrier.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/Exceptional-vs-sentinel-on-TreeFarm.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-artemis-on-Enclosure.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-artemis-on-LineOfFire.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-artemis-on-shrine.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-examplefuncsplayer-on-Barrier.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-examplefuncsplayer-on-shrine.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-exceptional-on-Enclosure.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-exceptional-on-shrine.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-lightsaber-on-Barrier.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-lightsaber-on-Enclosure.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-lightsaber-on-Hurdle.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-lightsaber-on-OMGTree.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/artemis-vs-superplayer-on-shrine.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/exceptional-vs-superplayer-on-SparseForest.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/exceptional-vs-superplayer-on-shrine.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/exceptionalprivilege-vs-examplefuncsplayer-on-Enclosure.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/exceptionalprivilege-vs-examplefuncsplayer-on-shrine.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/exceptionalprivilege-vs-exceptionalprivilege-on-shrine.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/exceptionalprivilege-vs-superplayer-on-shrine.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/lightsaber-vs-artemis-on-Chess.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/lightsaber-vs-artemis-on-Enclosure.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/lightsaber-vs-artemis-on-shrine.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/lightsaber-vs-lightsaber-on-Arena.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/lightsaber-vs-lightsaber-on-Enclosure.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/lightsaber-vs-lightsaber-on-OMGTree.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/scoutsquad-vs-exceptionalprivilege-on-Enclosure.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/scoutsquad-vs-superplayer-on-DenseForest.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/scoutsquad-vs-superplayer-on-Enclosure.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Arena.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Barbell.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Barrier.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Boxed.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-BugTrap.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Bullseye.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Caterpillar.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Chess.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Clusters.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Cramped.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-CrossFire.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-DarkSide.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-DeathStar.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-DefaultMap.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-DenseForest.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-DigMeOut.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Enclosure.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-GiantForest.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Interference.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-LilForts.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-LineOfFire.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Maniple.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-ModernArt.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-MyFirstMap.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-OpenField.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-PasscalsTriangles.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Shrubbery.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-SparseForest.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Standoff.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-TicTacToe.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Waves.bc17" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-shrine.bc17" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/battlecode-player-upload.jar" afterPath="$PROJECT_DIR$/battlecode-player-upload.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Archon.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Archon.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Channels.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Channels.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Combat.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Combat.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Gardener.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Gardener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Lumberjack.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Lumberjack.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Nav.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Nav.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/RobotPlayer$1.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/RobotPlayer$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/RobotPlayer.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/RobotPlayer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Scout.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Scout.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Soldier.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Soldier.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Tank.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Tank.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/sentinel/Util.class" afterPath="$PROJECT_DIR$/build/classes/sentinel/Util.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/Exceptional/Archon.class" afterPath="$PROJECT_DIR$/build/classes/Exceptional/Archon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/Exceptional/Nav.class" afterPath="$PROJECT_DIR$/build/classes/Exceptional/Nav.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/Exceptional/Soldier.class" afterPath="$PROJECT_DIR$/build/classes/Exceptional/Soldier.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/libs/bc.jar" afterPath="$PROJECT_DIR$/build/libs/bc.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/resources/app.asar" afterPath="$PROJECT_DIR$/client/resources/app.asar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Barrier.bc17" afterPath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Barrier.bc17" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Enclosure.bc17" afterPath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-Enclosure.bc17" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-SparseForest.bc17" afterPath="$PROJECT_DIR$/matches/sentinel-vs-sentinel-on-SparseForest.bc17" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/maps/DefaultMap.map17" afterPath="$PROJECT_DIR$/maps/DefaultMap.map17" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/examplefuncsplayer.RobotPlayerTest.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/examplefuncsplayer.RobotPlayerTest.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" />
@@ -44,17 +81,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/test-results/test/TEST-examplefuncsplayer.RobotPlayerTest.xml" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-examplefuncsplayer.RobotPlayerTest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis.relations" afterPath="$PROJECT_DIR$/build/tmp/scala/compilerAnalysis/compileScala.analysis.relations" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Archon.java" afterPath="$PROJECT_DIR$/src/sentinel/Archon.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Channels.java" afterPath="$PROJECT_DIR$/src/sentinel/Channels.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Combat.java" afterPath="$PROJECT_DIR$/src/sentinel/Combat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Gardener.java" afterPath="$PROJECT_DIR$/src/sentinel/Gardener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Lumberjack.java" afterPath="$PROJECT_DIR$/src/sentinel/Lumberjack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Nav.java" afterPath="$PROJECT_DIR$/src/sentinel/Nav.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/RobotPlayer.java" afterPath="$PROJECT_DIR$/src/sentinel/RobotPlayer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Scout.java" afterPath="$PROJECT_DIR$/src/sentinel/Scout.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Soldier.java" afterPath="$PROJECT_DIR$/src/sentinel/Soldier.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Tank.java" afterPath="$PROJECT_DIR$/src/sentinel/Tank.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sentinel/Util.java" afterPath="$PROJECT_DIR$/src/sentinel/Util.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Exceptional/Archon.java" afterPath="$PROJECT_DIR$/src/Exceptional/Archon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Exceptional/Gardener.java" afterPath="$PROJECT_DIR$/src/Exceptional/Gardener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Exceptional/Nav.java" afterPath="$PROJECT_DIR$/src/Exceptional/Nav.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Exceptional/Util.java" afterPath="$PROJECT_DIR$/src/Exceptional/Util.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -86,11 +116,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Archon.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Archon.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exceptional/Archon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+            <state relative-caret-position="513">
+              <caret line="150" column="23" lean-forward="false" selection-start-line="150" selection-start-column="23" selection-end-line="150" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,19 +141,23 @@
       <file leaf-file-name="Combat.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exceptional/Combat.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="216">
+              <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gardener.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Gardener.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Exceptional/Gardener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="594">
+              <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -131,9 +165,11 @@
       <file leaf-file-name="Lumberjack.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exceptional/Lumberjack.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="801">
+              <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,8 +177,8 @@
       <file leaf-file-name="Nav.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exceptional/Nav.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+            <state relative-caret-position="-2160">
+              <caret line="63" column="14" lean-forward="false" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,9 +199,11 @@
       <file leaf-file-name="Soldier.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exceptional/Soldier.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="234">
+              <caret line="60" column="16" lean-forward="false" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -183,8 +221,8 @@
       <file leaf-file-name="Util.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Exceptional/Util.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+            <state relative-caret-position="-2466">
+              <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -653,15 +691,15 @@
         <option value="$PROJECT_DIR$/src/sentinel/Gardener.java" />
         <option value="$PROJECT_DIR$/src/sentinel/Archon.java" />
         <option value="$PROJECT_DIR$/src/sentinel/Combat.java" />
-        <option value="$PROJECT_DIR$/src/Exceptional/Archon.java" />
         <option value="$PROJECT_DIR$/src/Exceptional/Combat.java" />
-        <option value="$PROJECT_DIR$/src/Exceptional/Gardener.java" />
         <option value="$PROJECT_DIR$/src/Exceptional/Lumberjack.java" />
-        <option value="$PROJECT_DIR$/src/Exceptional/Nav.java" />
         <option value="$PROJECT_DIR$/src/Exceptional/Scout.java" />
-        <option value="$PROJECT_DIR$/src/Exceptional/Soldier.java" />
         <option value="$PROJECT_DIR$/src/Exceptional/Tank.java" />
+        <option value="$PROJECT_DIR$/src/Exceptional/Archon.java" />
+        <option value="$PROJECT_DIR$/src/Exceptional/Nav.java" />
+        <option value="$PROJECT_DIR$/src/Exceptional/Soldier.java" />
         <option value="$PROJECT_DIR$/src/Exceptional/Util.java" />
+        <option value="$PROJECT_DIR$/src/Exceptional/Gardener.java" />
       </list>
     </option>
   </component>
@@ -696,6 +734,20 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="bc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -1071,6 +1123,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1078,6 +1133,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1141,6 +1199,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1148,6 +1209,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1204,6 +1268,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1218,6 +1285,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1288,6 +1358,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
           <caret line="38" column="46" lean-forward="false" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1295,6 +1368,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="16" column="24" lean-forward="false" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1334,60 +1410,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptional/Channels.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptional/Combat.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptional/Gardener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptional/Lumberjack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptional/Nav.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="8" column="2" lean-forward="false" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Exceptional/Scout.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptional/Soldier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1400,20 +1426,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptional/Util.java">
+    <entry file="file://$PROJECT_DIR$/src/Exceptional/Archon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" column="9" lean-forward="false" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        <state relative-caret-position="513">
+          <caret line="150" column="23" lean-forward="false" selection-start-line="150" selection-start-column="23" selection-end-line="150" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Exceptional/Archon.java">
+    <entry file="file://$PROJECT_DIR$/src/Exceptional/Channels.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exceptional/Nav.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2160">
+          <caret line="63" column="14" lean-forward="false" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exceptional/Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2466">
+          <caret line="22" column="35" lean-forward="false" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exceptional/Soldier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="60" column="16" lean-forward="false" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exceptional/Combat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="17" column="47" lean-forward="true" selection-start-line="17" selection-start-column="47" selection-end-line="17" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exceptional/Lumberjack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="801">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Exceptional/Gardener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="48" column="17" lean-forward="true" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

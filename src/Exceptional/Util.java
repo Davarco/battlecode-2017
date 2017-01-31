@@ -7,6 +7,30 @@ import static Exceptional.RobotPlayer.*;
 
 public class Util {
 
+    static MapLocation closestRobotLoc(MapLocation[] robotInfo) {
+
+        try {
+            float minDist = 1000000;
+            MapLocation closestRobot = null;
+            for (MapLocation info: robotInfo) {
+                if (rc.getLocation().distanceTo(info) < minDist) {
+                    minDist = rc.getLocation().distanceTo(info);
+                    closestRobot = info;
+                }
+            }
+
+            if (closestRobot != null) {
+                return closestRobot;
+            } else {
+                System.out.println("No closest robot (probably of type Archon).");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     static MapLocation treesHaveBullets(TreeInfo[] treeInfo) {
         for (TreeInfo info: treeInfo) {
             if (info.getContainedBullets() > 0) {

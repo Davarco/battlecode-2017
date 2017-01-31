@@ -140,6 +140,17 @@ public class Archon {
 
         try {
 
+            // Try to build in direction opposite of opponent's archons
+            Direction dir = rc.getLocation().directionTo(initialArchonLocations[0]).opposite();
+            if (rc.canHireGardener(dir)) {
+                rc.hireGardener(dir);
+                isGardenerBuilt = true;
+                numOfGardeners += 1;
+                setBuildingGardener(true);
+                setGardenerCountdown(numOfArchons*40);
+                return;
+            }
+
             // Search in intervals
             float radians = 0;
             while (radians <= Math.PI*2) {
